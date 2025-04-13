@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from filio.views import *
-from django.conf import settings 
+from django.conf import settings
 from django.conf.urls.static import static
 # from . import views
 
@@ -25,5 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home ,name='home'),
     
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+# Only for development or if you're allowing Render to serve media directly (not recommended long-term)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
