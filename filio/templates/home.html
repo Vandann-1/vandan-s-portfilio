@@ -533,149 +533,170 @@
     <!-- projectttt -->
 
 <!-- Projects Section with Floating Words -->
-<!-- Projects Section with Typing Heading -->
+<!-- Projects Section -->
 <section id="projects" class="relative py-20 bg-gray-950">
-    <div class="container mx-auto px-6">
-      <!-- Typing Heading -->
-      <h2 id="projects-heading" class="text-4xl font-bold text-white text-center mb-16" data-aos="fade-up"></h2>
-  
-      <div class="relative border-l-2 border-indigo-500 pl-8 space-y-20">
-        <!-- Project 1 -->
-        <div class="group relative" data-aos="fade-right">
-          <div class="absolute -left-6 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950"></div>
-          <div class="bg-gradient-to-r from-indigo-600/20 to-indigo-400/10 backdrop-blur-md p-6 rounded-xl shadow-xl transform transition-all duration-500 group-hover:scale-105">
-            <div class="flex flex-col md:flex-row items-center gap-6 relative">
-              <div class="relative w-full md:w-60 h-40">
-                <img src="{% static 'img/bbg.jpg' %}" alt="BlogBeat Project" class="w-full h-40 object-cover rounded-xl shadow-md" loading="lazy" />
-                <div class="floating-words absolute inset-0 pointer-events-none"></div>
-              </div>
-              <div>
-                <h3 class="text-2xl text-indigo-400 font-semibold mb-2">BlogBeat</h3>
-                <p class="text-gray-300 mb-4">A blogging platform built with Django and React, allowing users to create and share content with rich UI features.</p>
-                <div class="flex flex-wrap gap-2 text-xs mb-4">
-                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
-                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
-                  <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">React</span>
-                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">SQL</span>
-                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
-                </div>
-                <div class="flex space-x-4">
-                  <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
-                  <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="container mx-auto px-6">
+    
+    <!-- Typing Heading -->
+    <h2 id="projects-heading" class="text-4xl font-bold text-white text-center mb-8" data-aos="fade-up"> </h2>
+
+    <!-- Project Counter -->
+    <div class="mb-16" data-aos="zoom-in">
+      <div class="flex items-center justify-center space-x-4 text-white text-sm md:text-base">
+        <span class="font-semibold">Projects Completed:</span>
+        <div class="w-48 md:w-72 bg-gray-800 rounded-full overflow-hidden shadow-inner">
+          <div id="project-progress-bar" class="h-3 bg-indigo-500 transition-all duration-700" style="width: 0%;"></div>
         </div>
-  
-        <!-- Project 2 -->
-        <div class="group relative" data-aos="fade-left">
-          <div class="absolute -left-6 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950"></div>
-          <div class="bg-gradient-to-r from-indigo-600/20 to-indigo-400/10 backdrop-blur-md p-6 rounded-xl shadow-xl transform transition-all duration-500 group-hover:scale-105">
-            <div class="flex flex-col md:flex-row items-center gap-6 relative">
-              <div class="relative w-full md:w-60 h-40 flex items-center justify-center bg-gray-800 rounded-xl overflow-hidden">
-                <span class="text-white text-xl font-bold">Coming Soon</span>
-                <div class="floating-words absolute inset-0 pointer-events-none"></div>
+        <span id="project-count" class="font-bold text-indigo-400">0</span>
+      </div>
+    </div>
+
+    <!-- Project Timeline -->
+    <div class="relative border-l-2 border-indigo-500 pl-8 space-y-20">
+
+      <!-- Project 1 -->
+      <div class="group relative" data-aos="fade-right">
+        <div class="absolute -left-6 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950"></div>
+        <div class="bg-gradient-to-r from-indigo-600/20 to-indigo-400/10 backdrop-blur-md p-6 rounded-xl shadow-xl transform transition-all duration-500 group-hover:scale-105">
+          <div class="flex flex-col md:flex-row items-center gap-6 relative">
+            <div class="relative w-full md:w-60 h-40">
+              <img src="{% static 'img/bbg.jpg' %}" alt="BlogBeat Project" class="w-full h-40 object-cover rounded-xl shadow-md" loading="lazy" />
+              <div class="floating-words absolute inset-0 pointer-events-none"></div>
+            </div>
+            <div>
+              <h3 class="text-2xl text-indigo-400 font-semibold mb-2">BlogBeat</h3>
+              <p class="text-gray-300 mb-4">A blogging platform built with Django and React, allowing users to create and share content with rich UI features.</p>
+              <div class="flex flex-wrap gap-2 text-xs mb-4">
+                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
+                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
+                <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">React</span>
+                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">SQL</span>
+                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
               </div>
-              <div>
-                <h3 class="text-2xl text-indigo-400 font-semibold mb-2">Inventory Management</h3>
-                <p class="text-gray-300 mb-4">A project in progress to manage products, stock, and purchase orders with a modern UI.</p>
-                <div class="flex flex-wrap gap-2 text-xs mb-4">
-                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
-                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
-                  <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">JavaScript</span>
-                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">MySQL</span>
-                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
-                </div>
-                <div class="flex space-x-4">
-                  <a href="#" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
-                  <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
-                </div>
+              <div class="flex space-x-4">
+                <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
+                <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Project 2 -->
+      <div class="group relative" data-aos="fade-left">
+        <div class="absolute -left-6 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950"></div>
+        <div class="bg-gradient-to-r from-indigo-600/20 to-indigo-400/10 backdrop-blur-md p-6 rounded-xl shadow-xl transform transition-all duration-500 group-hover:scale-105">
+          <div class="flex flex-col md:flex-row items-center gap-6 relative">
+            <div class="relative w-full md:w-60 h-40 flex items-center justify-center bg-gray-800 rounded-xl overflow-hidden">
+              <span class="text-white text-xl font-bold">Coming Soon</span>
+              <div class="floating-words absolute inset-0 pointer-events-none"></div>
+            </div>
+            <div>
+              <h3 class="text-2xl text-indigo-400 font-semibold mb-2">Inventory Management</h3>
+              <p class="text-gray-300 mb-4">A project in progress to manage products, stock, and purchase orders with a modern UI.</p>
+              <div class="flex flex-wrap gap-2 text-xs mb-4">
+                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
+                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
+                <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">JavaScript</span>
+                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">MySQL</span>
+                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
+              </div>
+              <div class="flex space-x-4">
+                <a href="#" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
+                <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
-  
-  <!-- Floating Animation CSS -->
-  <style>
-    @keyframes floatUp {
-      0% {
-        opacity: 0;
-        transform: translateY(10px) scale(0.95);
-      }
-      50% {
-        opacity: 1;
-        transform: translateY(-5px) scale(1.05);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.95);
+  </div>
+</section>
+
+<!-- Floating Animation -->
+<style>
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translateY(10px) scale(0.95); }
+    50% { opacity: 1; transform: translateY(-5px) scale(1.05); }
+    100% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  }
+  .animate-float {
+    animation: floatUp 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+</style>
+
+<!-- Floating Words + Typing + Project Counter Script -->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    // Typing Heading
+    const headingText = "My Projects";
+    const headingEl = document.getElementById("projects-heading");
+    let i = 0;
+    function typeText() {
+      if (i < headingText.length) {
+        headingEl.innerHTML += headingText.charAt(i);
+        i++;
+        setTimeout(typeText, 100);
       }
     }
-  
-    .animate-float {
-      animation: floatUp 4s ease-in-out infinite;
-      pointer-events: none;
-    }
-  </style>
-  
-  <!-- All Combined Scripts -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      // Typing Animation for Projects Heading
-      const headingText = "My Projects";
-      const headingEl = document.getElementById("projects-heading");
-      let i = 0;
-  
-      function typeText() {
-        if (i < headingText.length) {
-          headingEl.innerHTML += headingText.charAt(i);
-          i++;
-          setTimeout(typeText, 100);
-        }
+    typeText();
+
+    // Project Counter
+    const totalProjects = document.querySelectorAll("#projects .group").length;
+    const countDisplay = document.getElementById("project-count");
+    const progressBar = document.getElementById("project-progress-bar");
+    const maxProjects = 10;
+    const progressPercent = Math.min((totalProjects / maxProjects) * 100, 100);
+
+    let current = 0;
+    const increment = Math.ceil(totalProjects / 30);
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= totalProjects) {
+        current = totalProjects;
+        clearInterval(interval);
       }
-      typeText();
-  
-      // Floating Words
-      const projects = [
-        {
-          words: ["Django", "Blog", "React", "API"]
-        },
-        {
-          words: ["Launching", "Soon", "Up Next", "Stay Tuned"]
-        }
-      ];
-      const colors = ["text-indigo-300", "text-purple-400", "text-sky-300", "text-pink-400"];
-      const containers = document.querySelectorAll(".floating-words");
-  
-      containers.forEach((container, index) => {
-        if (!projects[index]) return;
-        projects[index].words.forEach((word, i) => {
-          setTimeout(() => {
-            const span = document.createElement("span");
-            span.textContent = word;
-            span.className = `floating-word absolute text-sm animate-float ${colors[i % colors.length]}`;
-            span.style.top = `${10 + Math.random() * 60}%`;
-            span.style.left = `${10 + Math.random() * 60}%`;
-            container.appendChild(span);
-          }, i * 500);
-        });
+      countDisplay.textContent = current;
+    }, 30);
+
+    setTimeout(() => {
+      progressBar.style.width = `${progressPercent}%`;
+    }, 300);
+
+    // Floating Words
+    const projects = [
+      { words: ["Django", "Blog", "React", "API"] },
+      { words: ["Launching", "Soon", "Up Next", "Stay Tuned"] }
+    ];
+    const colors = ["text-indigo-300", "text-purple-400", "text-sky-300", "text-pink-400"];
+    const containers = document.querySelectorAll(".floating-words");
+
+    containers.forEach((container, index) => {
+      if (!projects[index]) return;
+      projects[index].words.forEach((word, i) => {
+        setTimeout(() => {
+          const span = document.createElement("span");
+          span.textContent = word;
+          span.className = `floating-word absolute text-sm animate-float ${colors[i % colors.length]}`;
+          span.style.top = `${10 + Math.random() * 60}%`;
+          span.style.left = `${10 + Math.random() * 60}%`;
+          container.appendChild(span);
+        }, i * 500);
       });
     });
-  </script>
-  
-  <!-- AOS Script & Styles -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  </script>
+  });
+</script>
+
+<!-- AOS (Animate on Scroll) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+
+
 
 <!-- Certifications Section -->
 <section id="certifications" class="relative py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
