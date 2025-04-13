@@ -1,0 +1,837 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Vandan's | Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        /* Animated Background */
+        .gradient-bg {
+            background: black; /* Changed to black */
+            animation: none; /* Removed gradient animation */
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Toggle Switch Styles */
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 40px; /* Reduced width */
+            height: 24px; /* Reduced height */
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px; /* Reduced height */
+            width: 20px; /* Reduced width */
+            left: 2px; /* Adjusted for smaller size */
+            bottom: 2px; /* Adjusted for smaller size */
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(16px); /* Adjusted for smaller size */
+        }
+    </style>
+<!-- Navigation -->
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-lg bg-slate-900/60 border-b border-slate-700 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-lg sm:text-xl font-bold text-white tracking-wide">Vandan's Portfolio</h1>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex space-x-8">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#about" class="nav-link">About</a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-white focus:outline-none text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed top-0 left-0 w-full h-full bg-slate-900/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center gap-6 text-center text-xl hidden transition-all">
+  <a href="#home" class="mobile-link">Home</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#about" class="mobile-link">About</a>
+</div>
+
+<!-- Navigation Link Style -->
+<style>
+  .nav-link {
+    position: relative;
+    color: #e2e8f0;
+    transition: color 0.3s;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #4f46e5;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+  .mobile-link {
+    color: #e2e8f0;
+    transition: color 0.3s;
+  }
+  .mobile-link:hover {
+    color: #60a5fa;
+  }
+</style>
+
+<!-- JavaScript for Toggle -->
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Close menu on scroll
+  window.addEventListener('scroll', () => {
+    if (!mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+    }
+  });
+</script>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Experience Section
+<section id="experience" class="py-20 bg-gradient-to-b from-slate-900 via-slate-950 to-black text-gray-300">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-extrabold text-center mb-12">My Experience</h2>
+    <div class="text-center text-gray-500">
+      Coming soon...
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Include GSAP and Typed.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- Hero Section -->
+<!-- Include GSAP and Typed.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- Hero Section -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gray-950 relative overflow-hidden">
+  <!-- Animated Background Gradient -->
+  <div class="absolute inset-0 z-0 animate-gradient bg-[conic-gradient(at_top_left,_#3b82f6_0%,_#06b6d4_50%,_#3b82f6_100%)] opacity-10"></div>
+
+  <!-- Particle Layer -->
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <div class="container px-6 z-10">
+    <div class="max-w-4xl mx-auto">
+      <!-- Typed Name -->
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-4">
+        <span id="typed-output" class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent drop-shadow-[0_1px_5px_rgba(99,102,241,0.5)]"></span>
+      </h1>
+
+      <!-- Description -->
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-400 mt-6 opacity-0 mx-auto max-w-2xl" id="description">
+        In logic and loops, I find my art,<br class="hidden sm:block" />
+        Django and I, a perfect start.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mt-10 opacity-0" id="buttons">
+        <a href="{{ clients.pdf.url }}" download class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-lg flex items-center gap-2 transition duration-300 shine-effect">
+          <i class="fas fa-download"></i>
+          <span>Download Resume</span>
+        </a>
+        <a href="#contact" class="px-6 py-3 border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-xl shadow-inner flex items-center gap-2 transition duration-300 shine-effect">
+          <i class="fas fa-paper-plane"></i>
+          <span>Let's Connect</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div class="absolute bottom-6 text-white opacity-60 animate-bounce z-10">
+    <i class="fas fa-angle-double-down text-3xl"></i>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+  // Typed Animation
+  var typed = new Typed("#typed-output", {
+    strings: ["Hii I am Vandan Darji", "A Python Enthusiast", "A Django Developer"],
+    typeSpeed: 60,
+    backSpeed: 50,
+    startDelay: 500,
+    backDelay: 1000,
+    showCursor: false,
+    loop: true
+  });
+
+  // Reveal Animations
+  setTimeout(() => {
+    gsap.to("#description", { opacity: 1, y: -10, duration: 1, ease: "power2.out" });
+    gsap.to("#buttons", { opacity: 1, y: -10, duration: 1, delay: 0.2, ease: "power2.out" });
+  }, 1500);
+
+  // Particles Config
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 30 },
+      color: { value: "#60a5fa" },
+      shape: { type: "circle" },
+      opacity: { value: 0.2 },
+      size: { value: 3 },
+      move: { enable: true, speed: 1.5 }
+    },
+    interactivity: {
+      events: { onhover: { enable: false }, onclick: { enable: false } }
+    },
+    retina_detect: true
+  });
+</script>
+
+<!-- Styles -->
+<style>
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-20deg);
+    animation: shine 2.5s infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -75%;
+    }
+
+    100% {
+      left: 125%;
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+  }
+</style>
+
+
+
+
+
+
+<!-- Technologies Section -->
+<section id="tech" class="py-20 bg-gray-950 relative text-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-5xl font-extrabold mb-16 text-center">Core Technologies</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Card Template Start -->
+      <div class="group rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 shadow-xl transition hover:shadow-indigo-500/50">
+        <div class="w-14 h-14 mb-4 flex items-center justify-center bg-indigo-500/20 rounded-full border border-indigo-500 text-indigo-400 text-2xl">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+        <p class="text-gray-300 mb-4">HTML, CSS, JavaScript </p>
+        <div class="h-2 bg-gray-700 rounded-full">
+          <div class="h-2 bg-indigo-500 rounded-full animate-grow" style="width: 90%"></div>
+        </div>
+      </div>
+
+      <div class="group rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 shadow-xl transition hover:shadow-sky-500/50">
+        <div class="w-14 h-14 mb-4 flex items-center justify-center bg-sky-500/20 rounded-full border border-sky-500 text-sky-400 text-2xl">
+          <i class="fas fa-server"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Backend</h3>
+        <p class="text-gray-300 mb-4">Django, Python, REST APIs</p>
+        <div class="h-2 bg-gray-700 rounded-full">
+          <div class="h-2 bg-sky-500 rounded-full animate-grow" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div class="group rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 shadow-xl transition hover:shadow-emerald-500/50">
+        <div class="w-14 h-14 mb-4 flex items-center justify-center bg-emerald-500/20 rounded-full border border-emerald-500 text-emerald-400 text-2xl">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Databases</h3>
+        <p class="text-gray-300 mb-4">MySQL, SqlLite, PostgreSQL</p>
+        <div class="h-2 bg-gray-700 rounded-full">
+          <div class="h-2 bg-emerald-500 rounded-full animate-grow" style="width: 80%"></div>
+        </div>
+      </div>
+
+      <div class="group rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 shadow-xl transition hover:shadow-pink-500/50">
+        <div class="w-14 h-14 mb-4 flex items-center justify-center bg-pink-500/20 rounded-full border border-pink-500 text-pink-400 text-2xl">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Others</h3>
+        <p class="text-gray-300 mb-4">Excel, Arduino</p>
+        <div class="h-2 bg-gray-700 rounded-full">
+          <div class="h-2 bg-pink-500 rounded-full animate-grow" style="width: 70%"></div>
+        </div>
+      </div>
+      <!-- Card Template End -->
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes grow {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+
+  .animate-grow {
+    animation: grow 2s ease-out forwards;
+  }
+</style>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- About Section -->
+
+    <section id="about" class="relative py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
+        <div class="container mx-auto px-6">
+          
+          <!-- Section Heading -->
+          <h2 class="text-4xl font-bold text-white text-center mb-16" data-aos="fade-up">
+            About Me
+          </h2>
+      
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left - Profile & Highlights -->
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+              {% load static %}
+              <img src="{% static 'img/mn.jpg' %}" alt="Vandan's Picture"
+                   class="w-40 h-40 rounded-full border-4 border-indigo-500 shadow-xl mb-6 hover:scale-110 transition-transform duration-500" />
+              
+              <h3 class="text-3xl font-bold text-indigo-400 mb-4">Hi, I'm Vandan</h3>
+              <p class="text-gray-300 text-lg leading-relaxed">
+                A passionate <span class="text-indigo-400">Python & Django Developer</span> & Tech Enthusiast.
+                I want specialize in <span class="text-pink-400">Web Dev</span>, <span class="text-sky-400">Backend</span>,
+                and love building interactive, user-focused apps to improve my skill set.
+              </p>
+              
+              <div class="mt-6 flex flex-wrap gap-2 justify-center md:justify-start">
+                <span class="bg-indigo-600/20 px-4 py-1 rounded-full text-sm">Python</span>
+                <span class="bg-purple-600/20 px-4 py-1 rounded-full text-sm">Django</span>
+                <span class="bg-sky-600/20 px-4 py-1 rounded-full text-sm">Htmal & Css</span>
+                <span class="bg-green-600/20 px-4 py-1 rounded-full text-sm">Cybersecurity</span>
+                <span class="bg-pink-600/20 px-4 py-1 rounded-full text-sm">JavaScript(Basics)</span>
+              </div>
+            </div>
+      
+            <!-- Right - Glass Timeline Cards -->
+            <div class="space-y-8 backdrop-blur-sm p-6 rounded-xl bg-white/5 border border-white/10 shadow-2xl">
+              
+              <!-- Education Card -->
+              <div class="p-5 bg-gray-800/70 rounded-xl shadow-md hover:scale-[1.02] transition">
+                <h3 class="text-indigo-400 text-xl font-bold mb-1">🚀 Education Journey</h3>
+                <p class="text-gray-300">
+                  🎓 BSc IT @ KES Shroff College – Present<br />
+                  🏫 HSC @ L.R. Tiwari College<br />
+                  🏫 SSC @ Blossom's High School
+                </p>
+              </div>
+      
+              <!-- Goals Card -->
+              <div class="p-5 bg-gray-800/70 rounded-xl shadow-md hover:scale-[1.02] transition">
+                <h3 class="text-indigo-400 text-xl font-bold mb-1">🎯 Personal Goals</h3>
+                <p class="text-gray-300">
+                  As a first-year IT student, I'm driven to explore every opportunity that challenges me to grow.
+                  My goal is to continuously learn new technologies, build innovative solutions, and contribute to impactful projects.
+                  I aspire to turn ideas into reality and carve out a meaningful path in fields like 
+                  <span class="text-pink-400">AI</span> and <span class="text-pink-400">Backend</span>, 
+                  while staying open to big opportunities ahead.
+                </p>
+              </div>
+      
+              <!-- Hobbies Card -->
+              <div class="p-5 bg-gray-800/70 rounded-xl shadow-md hover:scale-[1.02] transition">
+                <h3 class="text-indigo-400 text-xl font-bold mb-1">🎨 Hobbies</h3>
+                <p class="text-gray-300">
+                  Coding 💻 | Hiking 🥾 | Photography 📸 | Gaming 🎮
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+      <section id="experience" class="py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-black text-white relative">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-extrabold text-center mb-20 relative z-10">
+            <span class="bg-gradient-to-r from-white via-white to-gray-200 text-transparent bg-clip-text">
+              My Experience
+            </span>
+          </h2>
+      
+          <div class="relative space-y-16">
+            <!-- Vertical glow line -->
+            <div class="absolute left-4 top-0 h-full w-1 bg-white/10 rounded-full blur-[2px]"></div>
+      
+            <!-- Part 1 - Coming Soon -->
+            <div class="relative group ml-8">
+              <div class="bg-[#121826] border border-white/5 p-8 rounded-3xl shadow-xl transition-all duration-300 group-hover:shadow-white/10">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                    <span class="text-black font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold mb-1 text-white">Coming Soon</h3>
+                    <p class="text-gray-300 text-sm">Stay tuned for insights into my career journey and key milestones.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Future Experience Items Go Here -->
+            <!--
+            <div class="relative group ml-8">
+              <div class="bg-[#121826] border border-white/5 p-8 rounded-3xl shadow-xl transition-all duration-300 group-hover:shadow-white/10">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+                    <span class="text-black font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold mb-1 text-white">Frontend Developer @ XYZ</h3>
+                    <span class="text-sm text-gray-400">Jan 2023 – Present</span>
+                    <p class="text-gray-300 mt-2 text-sm">Created beautiful UI experiences using React, Tailwind, and GSAP, with a strong focus on animation and performance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            -->
+          </div>
+        </div>
+      </section>
+
+      
+
+
+    <!-- projectttt -->
+
+<!-- Projects Section with Floating Words -->
+<!-- Projects Section with Typing Heading -->
+<section id="projects" class="relative py-20 bg-gray-950">
+    <div class="container mx-auto px-6">
+      <!-- Typing Heading -->
+      <h2 id="projects-heading" class="text-4xl font-bold text-white text-center mb-16" data-aos="fade-up"></h2>
+  
+      <div class="relative border-l-2 border-indigo-500 pl-8 space-y-20">
+        <!-- Project 1 -->
+        <div class="group relative" data-aos="fade-right">
+          <div class="absolute -left-6 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950"></div>
+          <div class="bg-gradient-to-r from-indigo-600/20 to-indigo-400/10 backdrop-blur-md p-6 rounded-xl shadow-xl transform transition-all duration-500 group-hover:scale-105">
+            <div class="flex flex-col md:flex-row items-center gap-6 relative">
+              <div class="relative w-full md:w-60 h-40">
+                <img src="{% static 'img/bbg.jpg' %}" alt="BlogBeat Project" class="w-full h-40 object-cover rounded-xl shadow-md" loading="lazy" />
+                <div class="floating-words absolute inset-0 pointer-events-none"></div>
+              </div>
+              <div>
+                <h3 class="text-2xl text-indigo-400 font-semibold mb-2">BlogBeat</h3>
+                <p class="text-gray-300 mb-4">A blogging platform built with Django and React, allowing users to create and share content with rich UI features.</p>
+                <div class="flex flex-wrap gap-2 text-xs mb-4">
+                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
+                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
+                  <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">React</span>
+                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">SQL</span>
+                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
+                </div>
+                <div class="flex space-x-4">
+                  <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
+                  <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Project 2 -->
+        <div class="group relative" data-aos="fade-left">
+          <div class="absolute -left-6 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950"></div>
+          <div class="bg-gradient-to-r from-indigo-600/20 to-indigo-400/10 backdrop-blur-md p-6 rounded-xl shadow-xl transform transition-all duration-500 group-hover:scale-105">
+            <div class="flex flex-col md:flex-row items-center gap-6 relative">
+              <div class="relative w-full md:w-60 h-40 flex items-center justify-center bg-gray-800 rounded-xl overflow-hidden">
+                <span class="text-white text-xl font-bold">Coming Soon</span>
+                <div class="floating-words absolute inset-0 pointer-events-none"></div>
+              </div>
+              <div>
+                <h3 class="text-2xl text-indigo-400 font-semibold mb-2">Inventory Management</h3>
+                <p class="text-gray-300 mb-4">A project in progress to manage products, stock, and purchase orders with a modern UI.</p>
+                <div class="flex flex-wrap gap-2 text-xs mb-4">
+                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
+                  <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
+                  <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">JavaScript</span>
+                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">MySQL</span>
+                  <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
+                </div>
+                <div class="flex space-x-4">
+                  <a href="#" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
+                  <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Floating Animation CSS -->
+  <style>
+    @keyframes floatUp {
+      0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.05);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+      }
+    }
+  
+    .animate-float {
+      animation: floatUp 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+  </style>
+  
+  <!-- All Combined Scripts -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      // Typing Animation for Projects Heading
+      const headingText = "My Projects";
+      const headingEl = document.getElementById("projects-heading");
+      let i = 0;
+  
+      function typeText() {
+        if (i < headingText.length) {
+          headingEl.innerHTML += headingText.charAt(i);
+          i++;
+          setTimeout(typeText, 100);
+        }
+      }
+      typeText();
+  
+      // Floating Words
+      const projects = [
+        {
+          words: ["Django", "Blog", "React", "API"]
+        },
+        {
+          words: ["Launching", "Soon", "Up Next", "Stay Tuned"]
+        }
+      ];
+      const colors = ["text-indigo-300", "text-purple-400", "text-sky-300", "text-pink-400"];
+      const containers = document.querySelectorAll(".floating-words");
+  
+      containers.forEach((container, index) => {
+        if (!projects[index]) return;
+        projects[index].words.forEach((word, i) => {
+          setTimeout(() => {
+            const span = document.createElement("span");
+            span.textContent = word;
+            span.className = `floating-word absolute text-sm animate-float ${colors[i % colors.length]}`;
+            span.style.top = `${10 + Math.random() * 60}%`;
+            span.style.left = `${10 + Math.random() * 60}%`;
+            container.appendChild(span);
+          }, i * 500);
+        });
+      });
+    });
+  </script>
+  
+  <!-- AOS Script & Styles -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+
+<!-- Certifications Section -->
+<section id="certifications" class="relative py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
+    <div class="container mx-auto px-6">
+      <!-- Section Heading -->
+      <h2 class="text-4xl font-bold text-white text-center mb-16">My Certifications</h2>
+  
+      <!-- Certification Timeline Cards -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Certification 1 -->
+        <div class="bg-gray-900/60 backdrop-blur-lg border border-white/10 p-6 rounded-xl shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <h3 class="text-xl text-indigo-400 font-semibold mb-1">Cybersecurity</h3>
+          <p class="text-sm text-gray-400 mb-2">Issued by: Tech Mahindra</p>
+          <p class="text-gray-300 mb-4">Learned how cybersecurity protects systems, data, and infrastructure from digital threats and cyberattacks.</p>
+          <a href="your-certificate-link.pdf" target="_blank" class="inline-block px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full text-sm font-medium shadow-md transition">View Certificate</a>
+        </div>
+  
+        <!-- Certification 2 (Add More Like This) -->
+        <!--
+        <div class="bg-gray-900/60 backdrop-blur-lg border border-white/10 p-6 rounded-xl shadow-lg hover:scale-[1.02] transition-all duration-300">
+          <h3 class="text-xl text-indigo-400 font-semibold mb-1">[Course Title]</h3>
+          <p class="text-sm text-gray-400 mb-2">Issued by: [Platform]</p>
+          <p class="text-gray-300 mb-4">[Brief description of what you learned]</p>
+          <a href="#" target="_blank" class="inline-block px-5 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-full text-sm font-medium shadow-md transition">View Certificate</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
+  
+
+  
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
+    <div class="container mx-auto px-6">
+      <div class="glass max-w-3xl mx-auto p-10 rounded-3xl shadow-2xl bg-white/5 backdrop-blur-lg border border-white/10" data-aos="zoom-in">
+        
+        <!-- Animated Typing Heading -->
+        <h2 id="contact-heading" class="text-4xl font-bold mb-10 text-center tracking-wide"></h2>
+        
+        <!-- Contact Form -->
+        <form class="space-y-8">
+          <!-- Name -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-indigo-300">Your Name</label>
+            <input type="text" placeholder="Enter your name"
+              class="w-full bg-slate-800/40 text-white placeholder-gray-400 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-md transition duration-300">
+          </div>
+  
+          <!-- Email -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-indigo-300">Email Address</label>
+            <input type="email" placeholder="you@example.com"
+              class="w-full bg-slate-800/40 text-white placeholder-gray-400 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-md transition duration-300">
+          </div>
+  
+          <!-- Message -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-indigo-300">Message</label>
+            <textarea rows="5" placeholder="What's on your mind?"
+              class="w-full bg-slate-800/40 text-white placeholder-gray-400 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-md transition duration-300"></textarea>
+          </div>
+  
+          <!-- Send Button -->
+          <button
+            class="w-full py-4 bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 rounded-lg flex items-center justify-center gap-3 text-white font-medium shadow-lg group">
+            <span>Send Message</span>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Typing JS -->
+  <script>
+    const connectHeading = "To Connect";
+    const headingElement = document.getElementById("contact-heading");
+    let c = 0;
+    function typeHeading() {
+      if (c < connectHeading.length) {
+        headingElement.innerHTML += connectHeading.charAt(c);
+        c++;
+        setTimeout(typeHeading, 100);
+      }
+    }
+    window.addEventListener('DOMContentLoaded', typeHeading);
+  </script>
+
+
+
+      <!-- Footer -->
+<footer class="bg-gradient-to-b from-slate-950 to-black border-t border-white/10">
+  <div class="container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-4 gap-10">
+      <!-- Connect -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-white">Connect</h4>
+        <div class="flex space-x-6 mt-4">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/vandan-darji-3b282931a" target="_blank" rel="noopener noreferrer"
+             class="group text-white hover:text-indigo-400 transition duration-300">
+            <div class="w-10 h-10 bg-white/10 hover:bg-indigo-600/30 rounded-full flex items-center justify-center backdrop-blur-sm transition duration-300 group-hover:scale-110">
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </div>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/your-github-Vandann-1" target="_blank" rel="noopener noreferrer"
+             class="group text-white hover:text-gray-300 transition duration-300">
+            <div class="w-10 h-10 bg-white/10 hover:bg-gray-500/30 rounded-full flex items-center justify-center backdrop-blur-sm transition duration-300 group-hover:scale-110">
+              <i class="fab fa-github text-xl"></i>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/justt.vandann" target="_blank" rel="noopener noreferrer"
+             class="group text-white hover:text-pink-400 transition duration-300">
+            <div class="w-10 h-10 bg-white/10 hover:bg-pink-500/30 rounded-full flex items-center justify-center backdrop-blur-sm transition duration-300 group-hover:scale-110">
+              <i class="fab fa-instagram text-xl"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+        <ul class="space-y-2 text-sm">
+          <li class="text-gray-400">vandanparmar6041@gmail.com</li>
+          <li class="text-gray-400">9022641867</li>
+        </ul>
+      </div>
+
+      <!-- Optionally Add: Quick Links or Location here -->
+      <!--
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="#about" class="hover:text-white transition">About Me</a></li>
+          <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+        </ul>
+      </div>
+      -->
+    </div>
+
+    <!-- Bottom line -->
+    <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-sm">
+      © 2025 Vandan. All rights reserved.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
