@@ -183,42 +183,31 @@
 <!-- Font Awesome CDN -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-<!-- Experience Section
-<section id="experience" class="py-20 bg-gradient-to-b from-slate-900 via-slate-950 to-black text-gray-300">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-extrabold text-center mb-12">My Experience</h2>
-    <div class="text-center text-gray-500">
-      Coming soon...
-    </div>
-  </div>
-</section> -->
+
 
 
 <!-- Include GSAP and Typed.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-<!-- Hero Section -->
-<!-- Include GSAP and Typed.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
 <!-- Hero Section -->
 <section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gray-950 relative overflow-hidden">
-  <!-- Animated Background Gradient -->
-  <div class="absolute inset-0 z-0 animate-gradient bg-[conic-gradient(at_top_left,_#3b82f6_0%,_#06b6d4_50%,_#3b82f6_100%)] opacity-10"></div>
+  <!-- Enhanced Abstract Background -->
+  <div class="absolute inset-0 z-0">
+    <!-- Glowing Blobs -->
+    <div class="absolute w-[50vw] h-[50vw] bg-indigo-500/20 blur-[100px] rounded-full top-[-20%] left-[-10%] animate-blob"></div>
+    <div class="absolute w-[50vw] h-[50vw] bg-cyan-400/20 blur-[100px] rounded-full bottom-[-10%] right-[-10%] animate-blob2"></div>
 
-  <!-- Particle Layer -->
-  <div id="particles-js" class="absolute inset-0 z-0"></div>
+    <!-- Particle Layer -->
+    <div id="particles-js" class="absolute inset-0 z-0"></div>
+  </div>
 
+  <!-- Main Content -->
   <div class="container px-6 z-10">
     <div class="max-w-4xl mx-auto">
-      <!-- Typed Name -->
+      <!-- Typing Title -->
       <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-4">
-        <span id="typed-output" class="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent drop-shadow-[0_1px_5px_rgba(99,102,241,0.5)]"></span>
+        <span id="typed-output" class="text-white drop-shadow-[0_1px_8px_rgba(255,255,255,0.5)]"></span>
       </h1>
 
-      <!-- Description -->
+      <!-- Subtitle -->
       <p class="text-lg sm:text-xl md:text-2xl text-gray-400 mt-6 opacity-0 mx-auto max-w-2xl" id="description">
         In logic and loops, I find my art,<br class="hidden sm:block" />
         Django and I, a perfect start.
@@ -238,7 +227,7 @@
     </div>
   </div>
 
-  <!-- Scroll Down Indicator -->
+  <!-- Scroll Indicator -->
   <div class="absolute bottom-6 text-white opacity-60 animate-bounce z-10">
     <i class="fas fa-angle-double-down text-3xl"></i>
   </div>
@@ -251,8 +240,8 @@
 
 <script>
   // Typed Animation
-  var typed = new Typed("#typed-output", {
-    strings: ["Hii I am Vandan Darji", "A Python Enthusiast", "A Django Developer"],
+  new Typed("#typed-output", {
+    strings: ["Hi, I’m Vandan Darji", "A Python Enthusiast", "A Django Developer"],
     typeSpeed: 60,
     backSpeed: 50,
     startDelay: 500,
@@ -307,31 +296,30 @@
     0% {
       left: -75%;
     }
-
     100% {
       left: 125%;
     }
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
+  @keyframes blob {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
     }
-
     50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
+      transform: translateY(-30px) scale(1.05);
     }
   }
 
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 15s ease infinite;
+  .animate-blob {
+    animation: blob 18s ease-in-out infinite;
+  }
+
+  .animate-blob2 {
+    animation: blob 22s ease-in-out infinite;
   }
 </style>
+
+
 
 
 
@@ -459,6 +447,48 @@
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.tech-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(120deg, #ff6ec4, #7873f5, #66ffcc);
+  background-size: 300% 300%;
+  z-index: 0;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  border-radius: 1rem;
+}
+
+.tech-card:hover::before {
+  opacity: 0.4;
+  animation: glowGradient 6s ease infinite;
+}
+
+@keyframes glowGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.tech-card:hover {
+  transform: translateY(-10px) rotateX(4deg) rotateY(2deg);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+}
+
+.tech-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .tech-title {
@@ -466,12 +496,16 @@
   font-weight: 600;
   margin-bottom: 1rem;
   transition: color 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
 }
 
 .tech-icons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .tech-icon-wrapper {
@@ -482,6 +516,12 @@
   text-align: center;
   padding-top: 0.5rem;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.tech-icon-wrapper:hover {
+  transform: translateY(-5px);
 }
 
 .tech-icon {
@@ -515,8 +555,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 </style>
+
 
 
 
@@ -890,21 +930,21 @@ const [message, setMessage] = `<span id='prev-message'>Hello, interstellar soul!
         <!-- Name -->
         <div>
           <label class="block text-indigo-300 mb-1">Your Name</label>
-          <input type="text" id="name" placeholder="Captain Nova"
+          <input type="text" id="name" placeholder="Your Name"
             class="w-full bg-black/40 text-white p-4 rounded-xl border border-indigo-700 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
 
         <!-- Email -->
         <div>
           <label class="block text-indigo-300 mb-1">Email Address</label>
-          <input type="email" id="email" placeholder="nova@galaxy.com"
+          <input type="email" id="email" placeholder="Your Email"
             class="w-full bg-black/40 text-white p-4 rounded-xl border border-indigo-700 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
 
         <!-- Subject -->
         <div>
           <label class="block text-indigo-300 mb-1">Subject</label>
-          <input type="text" id="subject" placeholder="Stardust Inquiry"
+          <input type="text" id="subject" placeholder="Enter a subject"
             class="w-full bg-black/40 text-white p-4 rounded-xl border border-indigo-700 shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
         </div>
 
