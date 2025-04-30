@@ -19,6 +19,35 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+
+      * {
+        box-sizing: border-box;
+      }
+      
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      
+
+      .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      
+
+      .hero-text {
+        max-width: 600px;
+        padding: 2rem;
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        overflow: visible;
+        white-space: normal;
+      }
+      
         /* Custom Glass Effect */
         .glass {
             background: rgba(255, 255, 255, 0.1);
@@ -663,7 +692,7 @@
 
 <!-- Projects Section with Floating Words -->
 <!-- Projects Section -->
-<section id="projects" class="relative py-20 bg-gray-950">
+<section id="projects" class="relative py-20 bg-gradient-to-b from-[#090e1f] to-[#0a0f25]">
   <div class="container mx-auto px-6">
 
     <!-- Typing Heading -->
@@ -674,7 +703,7 @@
       <div class="flex items-center justify-center space-x-4 text-white text-sm md:text-base">
         <span class="font-semibold">Projects Completed:</span>
         <div class="w-48 md:w-72 bg-gray-800 rounded-full overflow-hidden shadow-inner">
-          <div id="project-progress-bar" class="h-3 rounded-full gradient-bar" style="width: 0%;"></div>
+          <div id="project-progress-bar" class="h-2 rounded-full gradient-bar" style="width: 0%;"></div>
         </div>
         <span id="project-count" class="font-bold text-indigo-400">0</span>
       </div>
@@ -685,7 +714,7 @@
 
       <!-- Project 1 -->
       <div class="group relative project-card pl-8" data-aos="fade-right">
-        <div class="absolute left-2 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950 project-dot z-10"></div>
+        <div class="absolute left-2 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-[#0a0f25] project-dot z-10"></div>
         <div class="glass-card p-6 rounded-xl transition-transform duration-500 relative">
           <div class="flex flex-col md:flex-row items-center gap-6 relative">
             <div class="relative w-full md:w-60 h-40">
@@ -693,18 +722,19 @@
               <div class="floating-words absolute inset-0 pointer-events-none"></div>
             </div>
             <div>
+              <span class="text-xs text-indigo-300 uppercase tracking-wider">Full Stack</span>
               <h3 class="text-2xl text-indigo-400 font-semibold mb-2">BlogBeat</h3>
               <p class="text-gray-300 mb-4">A blogging platform built with Django and React, allowing users to create and share content with rich UI features.</p>
               <div class="flex flex-wrap gap-2 text-xs mb-4">
-                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
-                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
-                <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">React</span>
-                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">SQL</span>
-                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
+                <span class="bg-indigo-500/30 px-2 py-0.5 rounded-full text-white">Python</span>
+                <span class="bg-indigo-500/30 px-2 py-0.5 rounded-full text-white">Django</span>
+                <span class="bg-sky-500/30 px-2 py-0.5 rounded-full text-white">React</span>
+                <span class="bg-purple-500/30 px-2 py-0.5 rounded-full text-white">SQL</span>
+                <span class="bg-purple-500/30 px-2 py-0.5 rounded-full text-white">REST API</span>
               </div>
               <div class="flex space-x-4">
-                <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
-                <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
+                <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">GitHub</a>
+                <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">Live Preview</a>
               </div>
             </div>
           </div>
@@ -713,7 +743,7 @@
 
       <!-- Project 2 -->
       <div class="group relative project-card pl-8" data-aos="fade-left">
-        <div class="absolute left-2 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-gray-950 project-dot z-10"></div>
+        <div class="absolute left-2 top-2 w-4 h-4 bg-indigo-500 rounded-full border-4 border-[#0a0f25] project-dot z-10"></div>
         <div class="glass-card p-6 rounded-xl transition-transform duration-500 relative">
           <div class="flex flex-col md:flex-row items-center gap-6 relative">
             <div class="relative w-full md:w-60 h-40 flex items-center justify-center bg-gray-800 rounded-xl overflow-hidden">
@@ -721,19 +751,20 @@
               <div class="floating-words absolute inset-0 pointer-events-none"></div>
             </div>
             <div>
+              <span class="text-xs text-indigo-300 uppercase tracking-wider">Backend</span>
               <h3 class="text-2xl text-indigo-400 font-semibold mb-2">Inventory Management</h3>
               <p class="text-gray-300 mb-4">A project in progress to manage products, stock, and purchase orders with a modern UI.</p>
               <div class="flex flex-wrap gap-2 text-xs mb-4">
-                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Python</span>
-                <span class="bg-indigo-500/30 px-3 py-1 rounded-full text-white">Django</span>
-                <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">JavaScript</span>
-                <span class="bg-sky-500/30 px-3 py-1 rounded-full text-white">Php</span>
-                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">MySQL</span>
-                <span class="bg-purple-500/30 px-3 py-1 rounded-full text-white">REST API</span>
+                <span class="bg-indigo-500/30 px-2 py-0.5 rounded-full text-white">Python</span>
+                <span class="bg-indigo-500/30 px-2 py-0.5 rounded-full text-white">Django</span>
+                <span class="bg-sky-500/30 px-2 py-0.5 rounded-full text-white">JavaScript</span>
+                <span class="bg-sky-500/30 px-2 py-0.5 rounded-full text-white">Php</span>
+                <span class="bg-purple-500/30 px-2 py-0.5 rounded-full text-white">MySQL</span>
+                <span class="bg-purple-500/30 px-2 py-0.5 rounded-full text-white">REST API</span>
               </div>
               <div class="flex space-x-4">
-                <a href="#" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">View</a>
-                <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">About</a>
+                <a href="#" class="px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all">GitHub</a>
+                <a href="#" class="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-all">Live Preview</a>
               </div>
             </div>
           </div>
@@ -744,6 +775,7 @@
   </div>
 </section>
 
+<!-- Styles -->
 <style>
   @keyframes floatUp {
     0% { opacity: 0; transform: translateY(10px) scale(0.95); }
@@ -757,6 +789,17 @@
   }
   #projects-heading {
     text-shadow: 0 0 10px rgba(99,102,241,0.6);
+    position: relative;
+  }
+  #projects-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    margin: 10px auto 0;
+    border-radius: 9999px;
+    opacity: 0.7;
   }
   .project-dot {
     box-shadow: 0 0 8px 2px rgba(99,102,241,0.6);
@@ -786,15 +829,16 @@
     box-shadow: 0 0 12px 6px rgba(139, 92, 246, 0.5);
   }
   .glass-card {
-    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.08));
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease-in-out;
     box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   }
   .glass-card:hover {
-    transform: translateY(-3px) scale(1);
-    box-shadow: 0 12px 32px rgba(99,102,241,0.4);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 32px rgba(99,102,241,0.3);
   }
   .gradient-bar {
     background: linear-gradient(to right, #6366f1, #8b5cf6);
@@ -802,6 +846,7 @@
   }
 </style>
 
+<!-- JS Typing, Counter, Floating Words -->
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     const headingText = "My Projects";
@@ -824,10 +869,9 @@
 
     let current = 0;
     const updateSpeed = 20;
-    const step = 1;
     function updateCount() {
       if (current < totalProjects) {
-        current += step;
+        current += 1;
         countDisplay.textContent = current;
         setTimeout(updateCount, updateSpeed);
       } else {
@@ -835,7 +879,6 @@
       }
     }
     updateCount();
-
     setTimeout(() => {
       progressBar.style.width = `${progressPercent}%`;
     }, 300);
@@ -864,6 +907,7 @@
   });
 </script>
 
+<!-- AOS Animation -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -983,71 +1027,115 @@ const [message, setMessage] = `<span id='prev-message'>Hello, interstellar soul!
   });
 </script>
 
+<!-- Font Awesome (make sure this is in your <head>) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <section class="bg-gradient-to-b from-slate-950 to-black py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Let's Work Together!</h2>
+      <p class="text-gray-400 text-lg mb-12">
+        Interested in collaborating, hiring, or just having a chat? Reach out to me on your favorite platform!
+      </p>
+  
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Instagram -->
+        <div onclick="handleClick('Instagram')" class="cursor-pointer bg-slate-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+          <div class="text-green-400 text-4xl mb-4">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <h3 class="text-white text-xl font-bold">Instagram</h3>
+          <p class="text-gray-400 mt-2">@justt.vandannn</p>
+        </div>
+  
+        <!-- Email -->
+        <div onclick="handleClick('Email')" class="cursor-pointer bg-slate-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+          <div class="text-green-400 text-4xl mb-4">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="text-white text-xl font-bold">Email</h3>
+          <p class="text-gray-400 mt-2 break-words">vandanparmar6041@gmail.com</p>
+        </div>
+  
+        <!-- LinkedIn -->
+        <div onclick="handleClick('LinkedIn')" class="cursor-pointer bg-slate-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+          <div class="text-green-400 text-4xl mb-4">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <h3 class="text-white text-xl font-bold">LinkedIn</h3>
+          <p class="text-gray-400 mt-2">@vandan-darji</p>
+        </div>
+  
+        <!-- GitHub -->
+        <div onclick="handleClick('GitHub')" class="cursor-pointer bg-slate-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+          <div class="text-green-400 text-4xl mb-4">
+            <i class="fab fa-github"></i>
+          </div>
+          <h3 class="text-white text-xl font-bold">GitHub</h3>
+          <p class="text-gray-400 mt-2">@Vandann-1</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function handleClick(platform) {
+      console.log(`You clicked on ${platform}`);
+      // You can trigger modals, tooltips, or other events here
+    }
+  </script>
+  
+
+
 
 
 
 
 
       <!-- Footer -->
-<footer class="bg-gradient-to-b from-slate-950 to-black border-t border-white/10">
-  <div class="container mx-auto px-6 py-16">
-    <div class="grid md:grid-cols-4 gap-10">
-      <!-- Connect -->
-      <div>
-        <h4 class="text-lg font-semibold mb-4 text-white">Connect</h4>
-        <div class="flex space-x-6 mt-4">
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/vandan-darji-3b282931a" target="_blank" rel="noopener noreferrer"
-             class="group text-white hover:text-indigo-400 transition duration-300">
-            <div class="w-10 h-10 bg-white/10 hover:bg-indigo-600/30 rounded-full flex items-center justify-center backdrop-blur-sm transition duration-300 group-hover:scale-110">
-              <i class="fab fa-linkedin-in text-xl"></i>
+      <footer class="bg-gradient-to-b from-slate-950 to-black border-t border-white/10">
+        <div class="container mx-auto px-6 py-16">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+            
+            <!-- Branding -->
+            <div>
+              <h3 class="text-2xl font-bold text-green-400 mb-4">Vandan</h3>
+              <p class="text-gray-400">Crafting unique web experiences for brands and businesses.</p>
             </div>
-          </a>
-
-          <!-- GitHub -->
-          <a href="https://github.com/your-github-Vandann-1" target="_blank" rel="noopener noreferrer"
-             class="group text-white hover:text-gray-300 transition duration-300">
-            <div class="w-10 h-10 bg-white/10 hover:bg-gray-500/30 rounded-full flex items-center justify-center backdrop-blur-sm transition duration-300 group-hover:scale-110">
-              <i class="fab fa-github text-xl"></i>
+      
+            <!-- Quick Links -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4 text-green-400">Quick Links</h4>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li><a href="#about" class="hover:text-white transition">About</a></li>
+                <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+                <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
+                <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+              </ul>
             </div>
-          </a>
-
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/justt.vandann" target="_blank" rel="noopener noreferrer"
-             class="group text-white hover:text-pink-400 transition duration-300">
-            <div class="w-10 h-10 bg-white/10 hover:bg-pink-500/30 rounded-full flex items-center justify-center backdrop-blur-sm transition duration-300 group-hover:scale-110">
-              <i class="fab fa-instagram text-xl"></i>
+      
+            <!-- Social Media -->
+            <div>
+              <h4 class="text-lg font-semibold mb-4 text-green-400">Follow Me</h4>
+              <div class="flex justify-center md:justify-start space-x-4">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/vandan-darji-3b282931a" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-indigo-400 text-xl transition"><i class="fab fa-linkedin-in"></i></a>
+      
+                <!-- GitHub -->
+                <a href="https://github.com/your-github-Vandann-1" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-gray-300 text-xl transition"><i class="fab fa-github"></i></a>
+      
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/justt.vandann" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-400 hover:text-pink-400 text-xl transition"><i class="fab fa-instagram"></i></a>
+              </div>
             </div>
-          </a>
+          </div>
+      
+          <!-- Bottom line -->
+          <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-sm">
+            © 2025 Made with ❤️ by Vandan
+          </div>
         </div>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
-        <ul class="space-y-2 text-sm">
-          <li class="text-gray-400">vandanparmar6041@gmail.com</li>
-          <li class="text-gray-400">9022641867</li>
-        </ul>
-      </div>
-
-      <!-- Optionally Add: Quick Links or Location here -->
-      <!--
-      <div>
-        <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="#about" class="hover:text-white transition">About Me</a></li>
-          <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
-        </ul>
-      </div>
-      -->
-    </div>
-
-    <!-- Bottom line -->
-    <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-sm">
-      © 2025 Vandan. All rights reserved.
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+      </footer>
+      
