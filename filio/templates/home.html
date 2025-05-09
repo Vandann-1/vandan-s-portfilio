@@ -619,76 +619,134 @@
 
     <!-- About Section -->
 
-    <section id="about" class="relative py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
-      <div class="container mx-auto px-6">
+    <head>
+      <!-- Tailwind CSS CDN -->
+      <script src="https://cdn.tailwindcss.com"></script>
     
-        <!-- Section Heading -->
-        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 tracking-wide relative inline-block w-fit mx-auto after:content-[''] after:block after:w-24 after:h-1 after:bg-indigo-500 after:mt-3" data-aos="fade-up">
-          About Me
-        </h2>
+      <!-- Swiper CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
-        <div class="grid md:grid-cols-2 gap-14 items-center">
+      <style>
+        /* Optional glowing effect */
+        .swiper-slide:hover {
+          box-shadow: 0 0 20px rgba(99, 102, 241, 0.5), 0 0 40px rgba(236, 72, 153, 0.4);
+          transition: all 0.3s ease-in-out;
+        }
     
-          <!-- Left: Profile & Highlights -->
-          <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-            {% load static %}
-            
-            <!-- Hexagon Profile Image -->
-            <div class="relative w-44 h-44 mb-6 overflow-hidden hexagon border-4 border-indigo-500 shadow-xl hover:scale-105 hover:border-pink-500 transition-all duration-500">
-              <img src="{% static 'img/mn.jpg' %}" alt="Vandan's Picture" class="object-cover w-full h-full" />
+        /* Optional Hexagon Image Style (custom shape simulation) */
+        .hexagon {
+          clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        }
+      </style>
+    </head>
+    <body class="bg-gray-950 text-white">
+    
+      <section id="about" class="relative py-24 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white">
+        <div class="container mx-auto px-6">
+    
+          <!-- Section Heading -->
+          <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 tracking-wide relative inline-block w-fit mx-auto after:content-[''] after:block after:w-24 after:h-1 after:bg-indigo-500 after:mt-3">
+            About Me
+          </h2>
+    
+          <div class="grid md:grid-cols-2 gap-14 items-center">
+    
+
+    
+<!-- Left: Profile & Highlights -->
+<div class="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
+  
+  <!-- Hexagon Profile Image -->
+  <div class="relative w-44 h-44 shrink-0 overflow-hidden hexagon border-4 border-indigo-500 shadow-xl hover:scale-105 hover:border-pink-500 transition-all duration-500">
+    <img src="{% static 'img/mn.jpg' %}" alt="Vandan's Picture" class="object-cover w-full h-full"></img>
+  </div>
+
+  <!-- Intro Text -->
+  <div class="space-y-4">
+    <h3 class="text-3xl font-bold text-indigo-400">Hi, I'm Vandan</h3>
+    <p class="text-gray-300 text-lg leading-relaxed max-w-md">
+      A passionate <span class="text-indigo-400">Python & Django Developer</span> and Tech Enthusiast.
+      I want to specialize in <span class="text-pink-400">Web Development</span> and <span class="text-sky-400">Backend</span>,
+      and I love crafting user-centric, interactive applications that push my skills further.
+    </p>
+
+    <!-- Tech Pills -->
+    <div class="mt-4 flex flex-wrap gap-3 justify-center md:justify-start">
+      <span class="bg-indigo-600/20 px-4 py-1 rounded-full text-sm border border-indigo-500">Python</span>
+      <span class="bg-purple-600/20 px-4 py-1 rounded-full text-sm border border-purple-500">Django</span>
+      <span class="bg-sky-600/20 px-4 py-1 rounded-full text-sm border border-sky-500">HTML & CSS</span>
+      <span class="bg-green-600/20 px-4 py-1 rounded-full text-sm border border-green-500">Cybersecurity</span>
+      <span class="bg-pink-600/20 px-4 py-1 rounded-full text-sm border border-pink-500">JavaScript (Basics)</span>
+    </div>
+  </div>
+</div>
+    
+            <!-- Right: Swiper Carousel Cards -->
+            <div class="swiper mySwiper w-full max-w-xl">
+              <div class="swiper-wrapper">
+    
+                <!-- Slide 1 -->
+                <div class="swiper-slide p-6 bg-gray-800/80 rounded-xl shadow-lg hover:scale-[1.03] hover:shadow-indigo-500/30 transition-all duration-300">
+                  <h3 class="text-indigo-400 text-xl font-bold mb-2">🚀 Education Journey</h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    🎓 BSc IT @ KES Shroff College – Present<br>
+                    🏫 HSC @ L.R. Tiwari College<br>
+                    🏫 SSC @ Blossom's High School
+                  </p>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="swiper-slide p-6 bg-gray-800/80 rounded-xl shadow-lg hover:scale-[1.03] hover:shadow-pink-500/30 transition-all duration-300">
+                  <h3 class="text-indigo-400 text-xl font-bold mb-2">🎯 Personal Goals</h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    As a first-year IT student, I'm eager to explore every opportunity that helps me grow.
+                    My goal is to constantly learn new technologies, build innovative solutions, and contribute to meaningful projects.
+                    I aim to thrive in <span class="text-pink-400">AI</span> and <span class="text-pink-400">Backend Development</span>.
+                  </p>
+                </div>
+    
+                <!-- Slide 3 -->
+                <div class="swiper-slide p-6 bg-gray-800/80 rounded-xl shadow-lg hover:scale-[1.03] hover:shadow-sky-500/30 transition-all duration-300">
+                  <h3 class="text-indigo-400 text-xl font-bold mb-2">🎨 Hobbies</h3>
+                  <p class="text-gray-300 leading-relaxed">
+                    Coding 💻 | Hiking 🥾 | Photography 📸 | Gaming 🎮
+                  </p>
+                </div>
+              </div>
+    
+              <!-- Swiper Pagination -->
+              <div class="swiper-pagination mt-6"></div>
             </div>
     
-            <h3 class="text-3xl font-bold text-indigo-400 animate-fade-in-down">Hi, I'm Vandan</h3>
-            <p class="text-gray-300 text-lg leading-relaxed max-w-lg animate-fade-in">
-              A passionate <span class="text-indigo-400">Python & Django Developer</span> and Tech Enthusiast.
-              I want to specialize in <span class="text-pink-400">Web Development</span> and <span class="text-sky-400">Backend</span>,
-              and I love crafting user-centric, interactive applications that push my skills further.
-            </p>
-    
-            <!-- Tech Pills -->
-            <div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-start animate-fade-in-up">
-              <span class="bg-indigo-600/20 px-4 py-1 rounded-full text-sm border border-indigo-500">Python</span>
-              <span class="bg-purple-600/20 px-4 py-1 rounded-full text-sm border border-purple-500">Django</span>
-              <span class="bg-sky-600/20 px-4 py-1 rounded-full text-sm border border-sky-500">HTML & CSS</span>
-              <span class="bg-green-600/20 px-4 py-1 rounded-full text-sm border border-green-500">Cybersecurity</span>
-              <span class="bg-pink-600/20 px-4 py-1 rounded-full text-sm border border-pink-500">JavaScript (Basics)</span>
-            </div>
-          </div>
-    
-          <!-- Right: Timeline / Info Cards -->
-          <div class="space-y-8 backdrop-blur-md p-6 rounded-xl bg-white/5 border border-white/10 shadow-2xl">
-    
-            <!-- Education Card -->
-            <div class="p-6 bg-gray-800/80 rounded-xl shadow-lg hover:scale-[1.03] hover:shadow-indigo-500/30 transition-all duration-300">
-              <h3 class="text-indigo-400 text-xl font-bold mb-2">🚀 Education Journey</h3>
-              <p class="text-gray-300 leading-relaxed">
-                🎓 BSc IT @ KES Shroff College – Present<br>
-                🏫 HSC @ L.R. Tiwari College<br>
-                🏫 SSC @ Blossom's High School
-              </p>
-            </div>
-    
-            <!-- Goals Card -->
-            <div class="p-6 bg-gray-800/80 rounded-xl shadow-lg hover:scale-[1.03] hover:shadow-pink-500/30 transition-all duration-300">
-              <h3 class="text-indigo-400 text-xl font-bold mb-2">🎯 Personal Goals</h3>
-              <p class="text-gray-300 leading-relaxed">
-                As a first-year IT student, I'm eager to explore every opportunity that helps me grow.
-                My goal is to constantly learn new technologies, build innovative solutions, and contribute to meaningful projects.
-                I aim to thrive in <span class="text-pink-400">AI</span> and <span class="text-pink-400">Backend Development</span>, staying open to impactful opportunities.
-              </p>
-            </div>
-    
-            <!-- Hobbies Card -->
-            <div class="p-6 bg-gray-800/80 rounded-xl shadow-lg hover:scale-[1.03] hover:shadow-sky-500/30 transition-all duration-300">
-              <h3 class="text-indigo-400 text-xl font-bold mb-2">🎨 Hobbies</h3>
-              <p class="text-gray-300 leading-relaxed">
-                Coding 💻 | Hiking 🥾 | Photography 📸 | Gaming 🎮
-              </p>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        const swiper = new Swiper('.mySwiper', {
+          loop: true,
+          grabCursor: true,
+          effect: "coverflow",
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 30,
+            stretch: 0,
+            depth: 200,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      </script>
+    </body>
+    
+    
     
       
       
