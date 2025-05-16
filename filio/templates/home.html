@@ -244,11 +244,18 @@
 
       <!-- Buttons -->
       <div class="flex flex-wrap justify-center gap-4 mt-10 opacity-0" id="buttons">
-        <a href="{{ clients.pdf.url }}" download class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-lg flex items-center gap-2 transition duration-300 shine-effect">
+        <!-- Resume Button with JS Download -->
+        <a href="{{ clients.pdf.url }}"
+           onclick="forceDownload(this.href, 'Vandan_Darji_Resume.pdf'); return false;"
+           class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-lg flex items-center gap-2 transition duration-300 shine-effect"
+           target="_blank" rel="noopener noreferrer">
           <i class="fas fa-download"></i>
           <span>Download Resume</span>
         </a>
-        <a href="#contact" class="px-6 py-3 border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-xl shadow-inner flex items-center gap-2 transition duration-300 shine-effect">
+
+        <!-- Connect Button -->
+        <a href="#contact"
+           class="px-6 py-3 border border-indigo-500 text-indigo-400 hover:bg-indigo-500/10 rounded-xl shadow-inner flex items-center gap-2 transition duration-300 shine-effect">
           <i class="fas fa-paper-plane"></i>
           <span>Let's Connect</span>
         </a>
@@ -267,8 +274,9 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
+<!-- JavaScript Logic -->
 <script>
-  // Typed Animation
+  // Typed.js
   new Typed("#typed-output", {
     strings: ["Hi, I’m Vandan Darji", "A Python Enthusiast", "A Django Developer"],
     typeSpeed: 60,
@@ -279,13 +287,13 @@
     loop: true
   });
 
-  // Reveal Animations
+  // GSAP animations
   setTimeout(() => {
     gsap.to("#description", { opacity: 1, y: -10, duration: 1, ease: "power2.out" });
     gsap.to("#buttons", { opacity: 1, y: -10, duration: 1, delay: 0.2, ease: "power2.out" });
   }, 1500);
 
-  // Particles Config
+  // particles.js
   particlesJS("particles-js", {
     particles: {
       number: { value: 30 },
@@ -300,6 +308,16 @@
     },
     retina_detect: true
   });
+
+  // Force download function
+  function forceDownload(url, filename) {
+    const a = document.createElement('a');
+    a.href = url;
+    a.setAttribute('download', filename);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 </script>
 
 <!-- Styles -->
@@ -347,6 +365,7 @@
     animation: blob 22s ease-in-out infinite;
   }
 </style>
+
 
 
 
