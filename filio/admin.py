@@ -3,8 +3,9 @@ from .models import Resume  # Import Resume model
 
 @admin.register(Resume)
 class ResumeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'pdf')  # Show name and PDF file in the admin panel
-    search_fields = ('name',)  # Allow searching by name
+    list_display = ('name', 'pdf')
+    search_fields = ('name',)
+
     
 #           <div class="project-entry glass-card snap-start min-w-[320px] md:min-w-[400px] p-6 rounded-xl bg-[#10182d]">
 #         <div class="flex flex-col items-center text-center">

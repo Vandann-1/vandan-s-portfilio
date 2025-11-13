@@ -26,7 +26,8 @@ urlpatterns = [
     path('',home ,name='home'),
     
 ]
-# Only for development or if you're allowing Render to serve media directly (not recommended long-term)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

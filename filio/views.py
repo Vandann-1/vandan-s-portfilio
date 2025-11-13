@@ -4,10 +4,12 @@ from django.shortcuts import render
 from .models import Resume
 
 
+from filio.models import Resume
 
 def home(request):
-    clients= Resume.objects.first() 
-    return render(request, 'home.html',{"clients":clients})
+    resume = Resume.objects.first()   # or .last() if you prefer
+    return render(request, 'home.html', {"resume": resume})
+
 
 
 

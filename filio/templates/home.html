@@ -5,7 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vandan's | Portfolio</title>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Load Tailwind FIRST -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- THEN your Tailwind custom config -->
+<script>
+tailwind.config = {
+  theme: {
+    extend: {},
+  },
+}
+</script>
+
     <script>
         // Configure Tailwind to use the 'class' strategy for dark mode
         tailwind.config = {
@@ -346,13 +359,36 @@
         Django and I, a perfect start.
       </p>
       <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-10 opacity-0" id="buttons">
-        <a href="{% static 'pdf/Vandan_Darji_Resume.pdf' %}"
-            onclick="forceDownload(this.href, 'Vandan_Darji_Resume.pdf'); return false;"
-            class="w-full md:w-auto px-6 py-3 text-base md:text-lg bg-gradient-to-r from-indigo-500 to-fuchsia-600 hover:from-indigo-600 hover:to-fuchsia-700 text-white rounded-2xl shadow-2xl shadow-indigo-500/50 flex items-center justify-center gap-3 transition-all duration-300 shine-effect backdrop-blur-sm"
-            target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-download animate-pulse"></i>
-          <span>Download Resume</span>
-        </a>
+
+
+
+
+{% if resume %}
+<a href="{{ resume.pdf.url }}"
+   onclick="forceDownload(event)"
+   class="w-full md:w-auto px-6 py-3 text-base md:text-lg bg-gradient-to-r from-indigo-500 to-fuchsia-600 hover:from-indigo-600 hover:to-fuchsia-700 text-white rounded-2xl shadow-2xl">
+  <i class="fas fa-download animate-pulse"></i>
+  <span>Download Resume</span>
+</a>
+{% else %}
+<p>No resume uploaded.</p>
+{% endif %}
+
+
+<script>
+function forceDownload(event) {
+    event.preventDefault();
+    const url = event.currentTarget.href;
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = url.split("/").pop();
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+}
+</script>
+
 
         <a href="#contact"
             class="w-full md:w-auto px-6 py-3 text-base md:text-lg border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-600/10 rounded-2xl shadow-xl shadow-cyan-500/50 flex items-center justify-center gap-3 transition-all duration-300 backdrop-blur-sm">
