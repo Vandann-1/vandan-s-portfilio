@@ -402,6 +402,7 @@ function forceDownload(event) {
 
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -727,278 +728,224 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+<section id="systems" class="systems">
 
-<section id="projects" class="relative py-20 bg-gradient-to-b from-[#000000] via-[#050505] to-[#000000] text-white">
-  <div class="container mx-auto px-6">
+<h2 class="systems-title">LIVE PROJECTS</h2>
 
-    <h2 class="text-4xl font-bold text-center mb-8 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.1)]" data-aos="fade-up">My Projects</h2>
+<div class="systems-grid">
 
-    <div class="flex justify-center mb-10 space-x-4" data-aos="fade-in">
-      <button id="timelineBtn" class="view-toggle bg-gray-700/50 hover:bg-indigo-600/70 transition">Timeline View</button>
-      <button id="carouselBtn" class="view-toggle active-tab bg-indigo-700/50 hover:bg-indigo-600/70 transition">Carousel View</button>
+<div class="system">
+  <img src="{% static 'img/blogb.jpg' %}" class="sys-img">
+  <div class="sys-body">
+    <div class="sys-head">
+      <h3>BLOGBEAT</h3>
+      <span class="sys-status live">LIVE</span>
+      <span class="sys-ver">v2.4</span>
     </div>
-
-    <div class="mb-16" data-aos="zoom-in">
-      <div class="flex items-center justify-center space-x-4 text-sm md:text-base">
-        <span class="font-semibold text-gray-300">Projects Completed:</span>
-        <div class="w-48 md:w-72 bg-gray-900 rounded-full overflow-hidden shadow-inner shadow-gray-700/50">
-          <div id="project-progress-bar" class="h-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 shadow-lg shadow-indigo-500/50" style="width: 100%;"></div>
-        </div>
-        <span id="project-count" class="font-bold text-indigo-400">3</span>
-      </div>
+    <p class="sys-desc">
+      Real-time social blogging platform with live WebSocket chat, AI assistant,
+      analytics dashboard and saved blogs engine.
+    </p>
+    <div class="sys-stack">
+      Django · DRF · WebSocket · Redis · PostgreSQL · Tailwind
     </div>
-
-    <div id="timelineView" class="relative space-y-20 hidden">
-      
-      <div class="group relative project-entry pl-8" data-aos="fade-right">
-        <div class="absolute left-2 top-2 w-4 h-4 bg-cyan-500 rounded-full border-4 border-[#000000] z-10 shadow-lg shadow-cyan-500/50"></div>
-        <div class="glass-card p-6 rounded-xl bg-black/60 border border-gray-700/50">
-          <div class="flex flex-col md:flex-row items-center gap-6">
-            <div class="relative w-full md:w-60 h-40">
-              <img src="{% static 'img/blogb.jpg' %}" alt="BlogBeat" class="w-full h-full object-cover rounded-xl shadow-lg" />
-            </div>
-            <div>
-              <span class="text-xs text-cyan-300 uppercase">Full Stack</span>
-              <h3 class="text-2xl text-indigo-400 font-semibold mb-2">BlogBeat</h3>
-              <p class="text-gray-300 mb-4">A blogging platform built with Django and React.</p>
-              <div class="flex flex-wrap gap-2 text-xs mb-4 tech-logo-stack">
-                <img src="{% static 'ic/dj.svg' %}" alt="Django" class="tech-icon-small">
-                <img src="{% static 'ic/rest.png' %}" alt="REST API" class="tech-icon-small">
-                <img src="{% static 'ic/sql.svg' %}" alt="SQL" class="tech-icon-small">
-                                <img src="{% static 'ic/web.svg' %}" alt="WebSocket" class="tech-icon-small">
-
-              </div>
-              <div class="flex space-x-3">
-                <a href="https://github.com/Vandann-1/blogbeat" target="_blank" aria-label="GitHub Repository" class="icon-action-btn bg-gray-800 text-white hover:text-indigo-400">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="#" aria-label="Live Demo" class="icon-action-btn bg-gray-800 text-white hover:text-green-400">
-                  <i class="fas fa-external-link-alt text-xl"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="group relative project-entry pl-8" data-aos="fade-left">
-        <div class="absolute left-2 top-2 w-4 h-4 bg-cyan-500 rounded-full border-4 border-[#000000] z-10 shadow-lg shadow-cyan-500/50"></div>
-        <div class="glass-card p-6 rounded-xl bg-black/60 border border-gray-700/50">
-          <div class="flex flex-col md:flex-row items-center gap-6">
-            <div class="relative w-full md:w-60 h-40 bg-gray-900 flex items-center justify-center rounded-xl shadow-lg">
-              <span class="text-white font-bold text-lg text-opacity-70">Coming Soon</span>
-            </div>
-            <div>
-              <span class="text-xs text-cyan-300 uppercase">Backend</span>
-              <h3 class="text-2xl text-indigo-400 font-semibold mb-2">Inventory System</h3>
-              <p class="text-gray-300 mb-4">A modern tool to manage stock and orders.</p>
-              <div class="flex flex-wrap gap-2 text-xs mb-4 tech-logo-stack">
-                <img src="{% static 'ic/dj.svg' %}" alt="Django" class="tech-icon-small">
-                <img src="{% static 'ic/sql.svg' %}" alt="MySQL" class="tech-icon-small">
-                <img src="{% static 'ic/rest.png' %}" alt="REST API" class="tech-icon-small">
-              </div>
-              <div class="flex space-x-3">
-                <a href="#" aria-label="GitHub Repository" class="icon-action-btn bg-gray-800 text-white hover:text-indigo-400">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="#" aria-label="Live Demo" class="icon-action-btn bg-gray-800 text-white hover:text-green-400">
-                  <i class="fas fa-external-link-alt text-xl"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="group relative project-entry pl-8" data-aos="fade-right">
-        <div class="absolute left-2 top-2 w-4 h-4 bg-cyan-500 rounded-full border-4 border-[#000000] z-10 shadow-lg shadow-cyan-500/50"></div>
-        <div class="glass-card p-6 rounded-xl bg-black/60 border border-gray-700/50">
-          <div class="flex flex-col md:flex-row items-center gap-6">
-            <div class="relative w-full md:w-60 h-40">
-              <img src="{% static 'img/techspire.jpg' %}" alt="TechSpire Solutions" class="w-full h-full object-cover rounded-xl shadow-lg" />
-            </div>
-            <div>
-              <span class="text-xs text-cyan-300 uppercase">Clothing Brand</span>
-              <h3 class="text-2xl text-indigo-400 font-semibold mb-2">sketezo E-commerce</h3>
-              <p class="text-gray-300 mb-4">E-commerce with Django & Clothing Brand</p>
-              <div class="flex flex-wrap gap-2 text-xs mb-4 tech-logo-stack">
-                <img src="{% static 'ic/dj.svg' %}" alt="Django" class="tech-icon-small">
-                <img src="{% static 'ic/web.svg' %}" alt="WebSocket" class="tech-icon-small">
-                <img src="{% static 'ic/p.svg' %}" alt="PostgreSQL" class="tech-icon-small">
-                <img src="{% static 'ic/js.svg' %}" alt="JavaScript" class="tech-icon-small">
-              </div>
-              <div class="flex space-x-3">
-                <a href="https://github.com/Vandann-1/techspire" target="_blank" aria-label="GitHub Repository" class="icon-action-btn bg-gray-800 text-white hover:text-indigo-400">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="#" aria-label="Live Demo" class="icon-action-btn bg-gray-800 text-white hover:text-green-400">
-                  <i class="fas fa-external-link-alt text-xl"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="carouselView" class="overflow-x-auto snap-x snap-mandatory flex space-x-6 pb-4 -mx-4 px-4 scroll-smooth hide-scrollbar">
-      
-      <div class="project-entry glass-card snap-start min-w-[320px] md:min-w-[400px] p-6 rounded-xl bg-black/60 border border-gray-700/50">
-        <div class="flex flex-col items-center text-center">
-          <img src="{% static 'img/blogb.jpg' %}" alt="BlogBeat" class="w-full h-40 object-cover object-center rounded-xl mb-4 shadow-lg" />
-          <h3 class="text-xl text-indigo-400 font-semibold">BlogBeat</h3>
-          <p class="text-gray-300 text-sm mb-3">Django + blog platform.</p>
-          <div class="flex flex-wrap justify-center gap-2 text-xs mb-3 tech-logo-stack">
-            <img src="{% static 'ic/dj.svg' %}" alt="Django" class="tech-icon-small">
-                <img src="{% static 'ic/web.svg' %}" alt="WebSocket" class="tech-icon-small">
-            <img src="{% static 'ic/sql.svg' %}" alt="SQL" class="tech-icon-small">
-          </div>
-          <div class="flex space-x-3 mt-2">
-            <a href="https://github.com/Vandann-1/blogbeat" target="_blank" aria-label="GitHub Repository" class="icon-action-btn bg-gray-800 text-white hover:text-indigo-400">
-              <i class="fab fa-github text-xl"></i>
-            </a>
-            <a href="#" aria-label="Live Demo" class="icon-action-btn bg-gray-800 text-white hover:text-green-400">
-              <i class="fas fa-external-link-alt text-xl"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-entry glass-card snap-start min-w-[320px] md:min-w-[400px] p-6 rounded-xl bg-black/60 border border-gray-700/50">
-        <div class="flex flex-col items-center text-center">
-          <div class="w-full h-40 bg-gray-900 rounded-xl flex items-center justify-center text-white font-bold mb-4 shadow-lg">Coming Soon</div>
-          <h3 class="text-xl text-indigo-400 font-semibold">Inventory System</h3>
-          <p class="text-gray-300 text-sm mb-3">Stock/order manager with Django.</p>
-          <div class="flex flex-wrap justify-center gap-2 text-xs mb-3 tech-logo-stack">
-            <img src="{% static 'ic/dj.svg' %}" alt="Django" class="tech-icon-small">
-            <img src="{% static 'ic/sql.svg' %}" alt="MySQL" class="tech-icon-small">
-          </div>
-          <div class="flex space-x-3 mt-2">
-            <a href="#" aria-label="GitHub Repository" class="icon-action-btn bg-gray-800 text-white hover:text-indigo-400">
-              <i class="fab fa-github text-xl"></i>
-            </a>
-            <a href="#" aria-label="Live Demo" class="icon-action-btn bg-gray-800 text-white hover:text-green-400">
-              <i class="fas fa-external-link-alt text-xl"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-entry glass-card snap-start min-w-[320px] md:min-w-[400px] p-6 rounded-xl bg-black/60 border border-gray-700/50">
-        <div class="flex flex-col items-center text-center">
-          <img src="{% static 'img/techspire.jpg' %}" alt="sketezo" class="w-full h-40 object-cover rounded-xl mb-4 shadow-lg" />
-          <h3 class="text-xl text-indigo-400 font-semibold">stekzo E-commerce</h3>
-          <p class="text-gray-300 text-sm mb-3">E-commerce with Django & applications</p>
-          <div class="flex flex-wrap justify-center gap-2 text-xs mb-3 tech-logo-stack">
-            <img src="{% static 'ic/dj.svg' %}" alt="Django" class="tech-icon-small">
-            <img src="{% static 'ic/p.svg' %}" alt="PostgreSQL" class="tech-icon-small">
-            <img src="{% static 'ic/js.svg' %}" alt="JavaScript" class="tech-icon-small">
-          </div>
-          <div class="flex space-x-3 mt-2">
-            <a href="https://github.com/Vandann-1/techspire" target="_blank" aria-label="GitHub Repository" class="icon-action-btn bg-gray-800 text-white hover:text-indigo-400">
-              <i class="fab fa-github text-xl"></i>
-            </a>
-            <a href="#" aria-label="Live Demo" class="icon-action-btn bg-gray-800 text-white hover:text-green-400">
-              <i class="fas fa-external-link-alt text-xl"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="sys-links">
+      <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="sys-git">SOURCE CODE</a>
+      <a href="#" class="sys-live">LIVE</a>
     </div>
   </div>
+</div>
+
+<div class="system">
+  <img src="{% static 'img/logo.jpg' %}" class="sys-img">
+  <div class="sys-body">
+    <div class="sys-head">
+      <h3>THINKNSHOP</h3>
+      <span class="sys-status live">LIVE</span>
+      <span class="sys-ver">v1.8</span>
+    </div>
+    <p class="sys-desc">
+      Full-stack Indian e-commerce platform with Razorpay payments, Shiprocket logistics,
+      admin dashboards and live order processing.
+    </p>
+    <div class="sys-stack">
+      Django · PostgreSQL · Razorpay · Redis · Tailwind
+    </div>
+    <div class="sys-links">
+      <a href="https://thinknshop.in" target="_blank" class="sys-live">LIVE</a>
+      <a href="#" class="sys-git">SOURCE CODE</a>
+    </div>
+  </div>
+</div>
+
+<div class="system">
+  <img src="{% static 'img/techspire.jpg' %}" class="sys-img">
+  <div class="sys-body">
+    <div class="sys-head">
+      <h3>TECHSPIRE</h3>
+      <span class="sys-status dev">IN DEV</span>
+      <span class="sys-ver">v1.0</span>
+    </div>
+    <p class="sys-desc">
+      Service company platform with automation bots, client portals,
+      CRM management and internal analytics dashboard.
+    </p>
+    <div class="sys-stack">
+      Django · Celery · Redis · PostgreSQL · Tailwind
+    </div>
+    <div class="sys-links">
+      <a href="https://github.com/Vandann-1/techspire" target="_blank" class="sys-git">SOURCE CODE</a>
+      <a href="#" class="sys-live">PREVIEW</a>
+    </div>
+  </div>
+</div>
+
+</div>
+</section>
 
 
 <style>
-
-  /* --- Find and replace the existing .tech-icon-small and related classes with this: --- */
-
-/* Style for the small tech logos in project cards (REFINED SIZE) */
-/* --- PROJECTS SECTION LOGO STYLES (Refined Size and Centering) --- */
-
-/* Style for the small tech logos in project cards (PERFECTED SIZE) */
-.tech-icon-small {
-    /* Subtle size for neat fit */
-    height: 2.15rem; /* Slightly smaller than 1.25rem */
-    width: 2.15rem;  
-    object-fit: contain;
-    filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.2));
-    transition: transform 0.2s ease-in-out;
+.systems{
+  background:#05070d;
+  padding:100px 0;
+  color:#fff;
+  font-family:Inter;
+  overflow:hidden;
 }
 
-.tech-icon-small:hover {
-    transform: scale(1.3); 
+.systems-title{
+  text-align:center;
+  font-size:clamp(26px,4vw,42px);
+  font-weight:900;
+  margin-bottom:48px;
+  letter-spacing:3px;
+  color:#6fa8ff;
 }
 
-/* Ensure the container for tech logos has perfect centering */
-.tech-logo-stack {
-    display: flex; 
-    flex-wrap: wrap;
-    gap: 0.6rem; /* A good visible gap between small logos */
-    
-    /* 🌟 KEY CHANGE FOR CENTERING: */
-    justify-content: center; 
-    align-items: center; 
-    
-    padding: 0; /* Ensures no extra spacing pushes logos off center */
-    margin-top: 0.5rem; /* Gives a little space below the project description */
-    width: 100%;
+/* DESKTOP GRID */
+.systems-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;
+  max-width:1200px;
+  padding:0 24px;
+  margin:auto;
+}
+
+/* CARD */
+.system{
+  border:1px solid #0f1c35;
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#050b18,#030713);
+  transition:.35s ease;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+
+.system:hover{
+  transform:translateY(-6px);
+  border-color:#3b82f6;
+  box-shadow:0 18px 48px rgba(59,130,246,.25);
+}
+
+.sys-img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+}
+
+.sys-body{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.sys-head{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+}
+
+.sys-head h3{
+  font-size:18px;
+  letter-spacing:1.5px;
+  color:#93b7ff;
+}
+
+.sys-status{
+  padding:3px 10px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:800;
+}
+
+.sys-status.live{background:#3b82f6;color:#000}
+.sys-status.dev{background:#64748b;color:#000}
+
+.sys-ver{color:#64748b;font-size:11px}
+
+.sys-desc{
+  color:#c7d2fe;
+  margin:12px 0;
+  line-height:1.55;
+  font-size:14px;
+}
+
+/* STACK */
+.sys-stack{
+  margin-top:auto;
+  color:#60a5fa;
+  font-size:11px;
+  letter-spacing:.8px;
+  opacity:.9;
+}
+
+/* BUTTONS */
+.sys-links{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:16px;
+}
+
+.sys-git,.sys-live{
+  text-align:center;
+  padding:11px 0;
+  border-radius:10px;
+  font-weight:800;
+  font-size:11px;
+  text-decoration:none;
+  letter-spacing:1px;
+}
+
+.sys-git{border:1px solid #1e3a8a;color:#93c5fd}
+.sys-live{background:#3b82f6;color:#000}
+
+/* MOBILE APP STORE RAIL */
+@media(max-width:768px){
+  .systems-grid{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:0 16px 24px;
+  }
+
+  .systems-grid::-webkit-scrollbar{display:none}
+
+  .system{
+    min-width:85%;
+    scroll-snap-align:start;
+  }
+
+  .sys-desc{font-size:13px}
 }
 </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const timelineBtn = document.getElementById("timelineBtn");
-      const carouselBtn = document.getElementById("carouselBtn");
-      const timelineView = document.getElementById("timelineView");
-      const carouselView = document.getElementById("carouselView");
-
-      const countDisplay = document.getElementById("project-count");
-      const progressBar = document.getElementById("project-progress-bar");
-      const maxProjects = 10;
-      const totalProjects = document.querySelectorAll("#timelineView .project-entry").length;
-
-      let displayedCount = 0;
-      function animateCount() {
-        if (displayedCount < totalProjects) {
-          displayedCount++;
-          countDisplay.textContent = displayedCount;
-          setTimeout(animateCount, 50);
-        }
-      }
-      animateCount();
-
-      setTimeout(() => {
-        const percent = Math.min((totalProjects / maxProjects) * 100, 100);
-        progressBar.style.width = `${percent}%`;
-      }, 500);
-
-      const setView = (showView, hideView, activeBtn, inactiveBtn) => {
-        showView.classList.remove("hidden");
-        hideView.classList.add("hidden");
-
-        activeBtn.classList.add("active-tab");
-        activeBtn.classList.remove("bg-gray-700/50"); // Ensure active button uses active color
-        inactiveBtn.classList.remove("active-tab");
-        inactiveBtn.classList.add("bg-gray-700/50"); // Ensure inactive button uses inactive color
-      };
-
-      // Set carousel as default view
-      setView(carouselView, timelineView, carouselBtn, timelineBtn);
-
-      timelineBtn.addEventListener("click", () => {
-        setView(timelineView, carouselView, timelineBtn, carouselBtn);
-      });
-
-      carouselBtn.addEventListener("click", () => {
-        setView(carouselView, timelineView, carouselBtn, timelineBtn);
-      });
-
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, once: true });
-      }
-    });
-  </script>
-</section>
 
 
 <section id="certifications" class="relative py-20 bg-gradient-to-b from-[#000000] via-[#050505] to-[#000000] text-white">
