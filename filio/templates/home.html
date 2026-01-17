@@ -304,10 +304,15 @@ tailwind.config = {
 </head>
 <body>
     
-<nav class="fixed top-0 w-full z-50 backdrop-blur-lg bg-black/70 border-b border-indigo-900/50 transition-all duration-300" id="navbar">
-  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-lg sm:text-xl font-bold text-white tracking-wide">Vandan's Portfolio</h1>
+<nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-black/80 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
 
+    <!-- LOGO -->
+    <h1 class="text-lg font-semibold text-white tracking-wide">
+      Vandan Darji
+    </h1>
+
+    <!-- DESKTOP MENU -->
     <div class="hidden md:flex space-x-8">
       <a href="#home" class="nav-link">Home</a>
       <a href="#projects" class="nav-link">Projects</a>
@@ -315,152 +320,218 @@ tailwind.config = {
       <a href="#about" class="nav-link">About</a>
     </div>
 
+    <!-- RIGHT ACTIONS -->
     <div class="flex items-center space-x-4">
-      <div id="theme-toggle-container" class="flex items-center">
-          <i id="sun-icon" class="fas fa-sun text-xl text-yellow-500 cursor-pointer hidden"></i>
-          <label class="toggle mx-2">
-              <input type="checkbox" id="theme-toggle" checked>
-              <span class="slider"></span>
-          </label>
-          <i id="moon-icon" class="fas fa-moon text-xl text-indigo-400 cursor-pointer"></i>
-      </div>
-    
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-white focus:outline-none text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
+      <!-- THEME TOGGLE -->
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="theme-toggle" class="sr-only peer" checked>
+        <div class="w-9 h-5 bg-white/20 rounded-full peer-checked:bg-white/40 transition"></div>
+        <div class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition peer-checked:translate-x-4"></div>
+      </label>
+
+      <!-- MOBILE TOGGLE -->
+      <button id="menu-toggle" class="md:hidden text-white text-xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="md:hidden hidden bg-black/95 border-t border-white/10">
+    <div class="flex flex-col px-6 py-6 space-y-5">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#about" class="mobile-link">About</a>
     </div>
   </div>
 </nav>
-
-<div id="mobileMenu" class="fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center gap-6 text-center text-xl hidden transition-all">
-  <a href="#home" class="mobile-link">Home</a>
-  <a href="#projects" class="mobile-link">Projects</a>
-  <a href="#experience" class="mobile-link">Experience</a>
-  <a href="#about" class="mobile-link">About</a>
-</div>
-
-<section id="home" class="h-screen flex flex-col justify-center items-center text-center relative overflow-hidden" 
-    style="background-color: #000000 !important;">
-  <div class="absolute inset-0 z-0">
-    <div class="absolute w-[60vw] h-[60vw] bg-indigo-500/30 blur-[150px] rounded-full top-[-20%] left-[-15%] animate-blob"></div>
-    <div class="absolute w-[60vw] h-[60vw] bg-cyan-400/30 blur-[150px] rounded-full bottom-[-15%] right-[-15%] animate-blob2"></div>
-    <div id="particles-js" class="absolute inset-0 z-0"></div>
-  </div>
-
-  <div class="container px-6 z-10">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-4">
-        <span id="typed-output" class="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
-      </h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-gray-400 mt-6 opacity-0 mx-auto max-w-2xl" id="description">
-        In logic and loops, I find my art,<br class="hidden sm:block" />
-        Django and I, a perfect start.
-      </p>
-      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-10 opacity-0" id="buttons">
-
-
-
-
-{% if resume %}
-<a href="{{ resume.pdf.url }}"
-   onclick="forceDownload(event)"
-   class="w-full md:w-auto px-6 py-3 text-base md:text-lg bg-gradient-to-r from-indigo-500 to-fuchsia-600 hover:from-indigo-600 hover:to-fuchsia-700 text-white rounded-2xl shadow-2xl">
-  <i class="fas fa-download animate-pulse"></i>
-  <span>Download Resume</span>
-</a>
-{% else %}
-<p>No resume uploaded.</p>
-{% endif %}
-
-
-<script>
-function forceDownload(event) {
-    event.preventDefault();
-    const url = event.currentTarget.href;
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = url.split("/").pop();
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+<style>
+  .nav-link {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
 }
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* MOBILE LINKS */
+.mobile-link {
+  color: white;
+  font-size: 1rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+</style>
+<script>
+  const toggleBtn = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
 </script>
 
 
-        <a href="#contact"
-            class="w-full md:w-auto px-6 py-3 text-base md:text-lg border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-600/10 rounded-2xl shadow-xl shadow-cyan-500/50 flex items-center justify-center gap-3 transition-all duration-300 backdrop-blur-sm">
-          <i class="fas fa-paper-plane animate-bounce-slow"></i>
-          <span>Let's Connect</span>
-        </a>
-      </div>
+
+
+
+
+<section
+  id="home"
+  class="min-h-screen flex items-center justify-center text-center relative overflow-hidden bg-black"
+>
+
+  <!-- subtle grain (depth, not decoration) -->
+  <div
+    class="absolute inset-0 pointer-events-none opacity-[0.03]"
+    style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');">
+  </div>
+
+  <!-- CENTER IMAGE -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <img
+      id="hero-portrait"
+      src="/static/ima/pp.png"  
+      alt="Vandan Darji"
+      class="w-52 sm:w-64 md:w-80 grayscale object-cover mask-fade
+             opacity-0 transition-opacity duration-1000"
+    />
+  </div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10 px-6 max-w-4xl mx-auto">
+
+    <!-- TYPED TEXT -->
+    <h1
+      class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight text-white">
+      <span id="typed-output"></span>
+    </h1>
+
+    <!-- SUBTEXT -->
+    <p
+      class="mt-6 text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+      In logic and loops, I find my art,<br class="hidden sm:block" />
+      Django and I, a perfect start.
+    </p>
+
+    <!-- ACTIONS -->
+    <div
+      class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+      <a
+        href="{{ resume.pdf.url }}"
+        onclick="forceDownload(event)"
+        class="w-full sm:w-auto px-7 py-3 border border-white text-white rounded-full
+               hover:bg-white hover:text-black transition-all duration-300
+               flex items-center justify-center gap-3">
+        <i class="fas fa-download"></i>
+        Download Resume
+      </a>
+
+      <a
+        href="#contact"
+        class="w-full sm:w-auto px-7 py-3 border border-white/40 text-white/80 rounded-full
+               hover:border-white hover:text-white transition-all duration-300
+               flex items-center justify-center gap-3">
+        <i class="fas fa-paper-plane"></i>
+        Let’s Connect
+      </a>
+
     </div>
   </div>
 </section>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobileMenu");
+document.addEventListener("DOMContentLoaded", () => {
+  /* Typed.js */
+  new Typed("#typed-output", {
+    strings: [
+      "Vandan Darji",
+      "Django Developer",
+      "Python Enthusiast"
+    ],
+    typeSpeed: 60,
+    backSpeed: 30,
+    backDelay: 1800,
+    startDelay: 500,
+    loop: true,
+    cursorChar: "|"
+  });
 
-    menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+  /* Image fade-in */
+  const img = document.getElementById("hero-portrait");
+  setTimeout(() => {
+    img.classList.remove("opacity-0");
+    img.classList.add("opacity-20");
+  }, 400);
+
+  /* Subtle parallax (desktop only) */
+  if (window.innerWidth > 768) {
+    window.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+      img.style.transform = `translate(${x}px, ${y}px)`;
     });
+  }
+});
 
-    
-    window.addEventListener('scroll', () => {
-        if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-        }
-    });
-
-    new Typed("#typed-output", {
-        strings: ["Hi, I’m Vandan Darji", "&lt;Python Enthusiast/&gt;", "&quot;Django Developer&quot;"],
-        typeSpeed: 60,
-        backSpeed: 50,
-        startDelay: 500,
-        backDelay: 1000,
-        showCursor: true, 
-        loop: true
-    });
-
-    setTimeout(() => {
-        gsap.to("#description", { opacity: 1, y: -10, duration: 1, ease: "power2.out" });
-        gsap.to("#buttons", { opacity: 1, y: -10, duration: 1, delay: 0.2, ease: "power2.out" });
-    }, 1500);
-
-    particlesJS("particles-js", {
-        particles: {
-            number: { value: 40 }, 
-            color: { value: "#06b6d4" },
-            shape: { type: "circle" },
-            opacity: { value: 0.4 }, 
-            size: { value: 3 },
-            move: { enable: true, speed: 2 } 
-        },
-        interactivity: {
-            events: { onhover: { enable: false }, onclick: { enable: false } }
-        },
-        retina_detect: true
-    });
-
-    function forceDownload(url, filename) {
-        const a = document.createElement('a');
-        a.href = url;
-        a.setAttribute('download', filename);
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
+/* Resume force download */
+function forceDownload(e) {
+  e.preventDefault();
+  const url = e.currentTarget.href;
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = url.split("/").pop();
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
 </script>
+
+
+<style>
+/* Typed cursor */
+.typed-cursor {
+  color: white;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+/* Soft mask for portrait */
+.mask-fade {
+  -webkit-mask-image: radial-gradient(circle, black 55%, transparent 75%);
+  mask-image: radial-gradient(circle, black 55%, transparent 75%);
+}
+
+
+</style>
+
+
 
 
 <section id="tech" class="py-20 bg-gradient-to-br from-[#050507] via-[#000000] to-[#050507] text-white">
