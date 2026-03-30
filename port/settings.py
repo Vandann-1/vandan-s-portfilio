@@ -10,11 +10,7 @@ SECRET_KEY = 'django-insecure-vl35+eb1^-!o#(=5kvlkt**6wazzn5_^pjx(u$bhh-4z2_z$ei
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  # ⚠️ Set to False before going live
 
-ALLOWED_HOSTS = [
-    'vandan-s-portfilio.onrender.com',
-    'localhost',
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
