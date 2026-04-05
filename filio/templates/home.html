@@ -8,7 +8,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <!-- NEW FONTS: Clash Display (display/headings) + Cabinet Grotesk (body) via Google Fonts equivalents -->
+  <!-- Using: Fraunces for headings (distinctive, editorial, high-end) + Plus Jakarta Sans for body (clean, modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -40,13 +42,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
       transition: background .3s, color .3s;
     }
-    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
 
     /* SCROLLBAR */
     ::-webkit-scrollbar { width: 6px; }
@@ -64,7 +66,7 @@
       max-width: 1200px; margin: 0 auto; padding: 0 24px;
       height: 64px; display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); letter-spacing: -.02em; }
+    .nav-logo { font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.1rem; color: var(--text); letter-spacing: -.02em; }
     .nav-links { display: flex; gap: 32px; }
     .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-2); text-decoration: none; letter-spacing: .01em; transition: color .2s; }
     .nav-links a:hover { color: var(--accent); }
@@ -101,7 +103,7 @@
 
     /* SECTION LABEL */
     .section-eyebrow {
-      display: inline-block; font-family: 'Syne', sans-serif; font-size: .7rem;
+      display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .7rem;
       font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
       color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent);
       padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
@@ -142,7 +144,7 @@
     .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--text); color: var(--bg); font-family: 'Syne', sans-serif;
+      background: var(--text); color: var(--bg); font-family: 'Fraunces', serif;
       font-weight: 700; font-size: .875rem; letter-spacing: .02em;
       padding: 13px 24px; border-radius: 999px; text-decoration: none;
       transition: transform .2s, box-shadow .2s; border: none; cursor: pointer;
@@ -150,7 +152,7 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px color-mix(in srgb, var(--text) 20%, transparent); }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: var(--text); font-family: 'Syne', sans-serif;
+      background: transparent; color: var(--text); font-family: 'Fraunces', serif;
       font-weight: 600; font-size: .875rem; letter-spacing: .02em;
       padding: 13px 24px; border-radius: 999px; text-decoration: none;
       border: 1.5px solid var(--border); transition: border-color .2s, color .2s;
@@ -174,7 +176,7 @@
       border-radius: 14px; padding: 12px 16px; box-shadow: 0 4px 20px rgba(0,0,0,.08);
     }
     .hero-stat-label { font-size: .7rem; color: var(--text-3); font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
-    .hero-stat-value { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--text); }
+    .hero-stat-value { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 800; color: var(--text); }
     .stat-1 { bottom: 24px; left: -16px; }
     .stat-2 { top: 24px; right: -16px; }
 
@@ -197,7 +199,7 @@
     .tech-inner { max-width: 1200px; margin: 0 auto; }
     .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0; }
     .filter-btn {
-      font-family: 'Syne', sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .1em;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .1em;
       text-transform: uppercase; padding: 8px 18px; border-radius: 999px; cursor: pointer;
       border: 1.5px solid var(--border); background: var(--bg); color: var(--text-2);
       transition: all .2s;
@@ -271,7 +273,7 @@
     .project-card:hover .project-img img { transform: scale(1.04); }
     .project-body { padding: 24px; }
     .project-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-    .project-head h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text); letter-spacing: -.02em; }
+    .project-head h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 800; color: var(--text); letter-spacing: -.02em; }
     .status-badge {
       font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
       padding: 4px 10px; border-radius: 999px;
@@ -308,7 +310,7 @@
     }
     .cert-card:hover { border-color: var(--accent); box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 10%, transparent); }
     .cert-icon { font-size: 2rem; margin-bottom: 4px; }
-    .cert-card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text); }
+    .cert-card h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 800; color: var(--text); }
     .cert-issuer { font-size: .8rem; color: var(--text-3); font-weight: 500; }
     .cert-card p { font-size: .88rem; color: var(--text-2); line-height: 1.6; flex: 1; }
     .cert-link {
@@ -324,7 +326,7 @@
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; align-items: start; }
     .contact-preview {
       background: var(--bg-3); border: 1px solid var(--border); border-radius: 20px;
-      padding: 28px; font-family: 'DM Sans', monospace; font-size: .82rem;
+      padding: 28px; font-family: 'Plus Jakarta Sans', monospace; font-size: .82rem;
       color: var(--text-2); line-height: 1.8; position: sticky; top: 84px;
     }
     .contact-preview .comment { color: var(--text-3); font-style: italic; }
@@ -335,7 +337,7 @@
     .form-group label { font-size: .8rem; font-weight: 600; color: var(--text-2); letter-spacing: .03em; }
     .form-group input, .form-group textarea {
       background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px;
-      padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: .95rem; color: var(--text);
+      padding: 12px 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .95rem; color: var(--text);
       transition: border-color .2s; outline: none; resize: none;
     }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
@@ -355,7 +357,7 @@
     }
     .social-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 10%, transparent); }
     .social-icon { font-size: 1.8rem; }
-    .social-card h3 { font-family: 'Syne', sans-serif; font-size: .95rem; font-weight: 800; color: var(--text); }
+    .social-card h3 { font-family: 'Fraunces', serif; font-size: .95rem; font-weight: 800; color: var(--text); }
     .social-card p { font-size: .8rem; color: var(--text-3); word-break: break-all; }
     .ig { --sc: #E1306C; } .em { --sc: #2563EB; } .li { --sc: #0A66C2; } .gh { --sc: #333; }
     html.dark .gh { --sc: #f0f0f0; }
@@ -368,9 +370,9 @@
     }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+    .footer-brand h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
     .footer-brand p { font-size: .875rem; color: var(--text-2); line-height: 1.6; max-width: 260px; }
-    .footer-col h4 { font-family: 'Syne', sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 16px; }
+    .footer-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 16px; }
     .footer-col a { display: block; font-size: .875rem; color: var(--text-2); text-decoration: none; margin-bottom: 8px; transition: color .2s; }
     .footer-col a:hover { color: var(--accent); }
     .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; font-size: .8rem; color: var(--text-3); }
@@ -487,6 +489,11 @@
       <div class="tech-card" data-cat="others"><img src="{% static 'ic/ex.svg' %}" alt="Excel"><span>Excel</span></div>
       <div class="tech-card" data-cat="others"><img src="{% static 'ic/c.svg' %}" alt="C"><span>C</span></div>
       <div class="tech-card" data-cat="others"><img src="{% static 'ic/cpp.svg' %}" alt="C++"><span>C++</span></div>
+      <div class="tech-card" data-cat="others"><img src="{% static 'ic/java.svg' %}" alt="Java"><span>Java</span></div>
+      <div class="tech-card" data-cat="tools"><img src="{% static 'ic/and.svg' %}" alt="Android Studio"><span>Android Studio</span></div>
+      <div class="tech-card" data-cat="backend"><img src="{% static 'ic/node.svg' %}" alt="Node.js"><span>Node.js</span></div>
+      <div class="tech-card" data-cat="backend"><img src="{% static 'ic/exp.png' %}" alt="Express.js"><span>Express.js</span></div>
+
     </div>
   </div>
 </section>
@@ -554,6 +561,7 @@
 </section>
 
 <!-- ===================== PROJECTS ===================== -->
+<!-- ===================== PROJECTS ===================== -->
 <section id="projects">
   <div class="projects-inner">
     <div class="reveal">
@@ -561,68 +569,291 @@
       <h2 class="section-title">Live Projects</h2>
       <p class="section-sub">Real-world applications built with modern Python and Django stack.</p>
     </div>
-    <div class="projects-grid">
 
-      <div class="project-card reveal">
-        <div class="project-img">
-          <img src="{% static 'img/blogb.jpg' %}" alt="BlogBeat">
+    <div class="proj-list reveal">
+
+      <div class="proj-item" onclick="openModal('blogbeat')">
+        <div class="proj-bg-num">01</div>
+        <div class="proj-top">
+          <div class="proj-left">
+            <div class="proj-eyebrow">
+              <span class="proj-idx">01 / 04</span>
+              <span class="dot-live"></span>
+              <span style="font-size:11px;color:#16a34a;font-weight:700;letter-spacing:.08em">LIVE</span>
+            </div>
+            <div class="proj-name">BlogBeat</div>
+            <p class="proj-tagline">Real-time social blogging — WebSocket chat, AI assistant, analytics &amp; saved blogs engine.</p>
+          </div>
+          <div class="proj-right">
+            <span class="proj-ver">v2.4</span>
+            <div class="proj-btns">
+              <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="pb pb-ghost" onclick="event.stopPropagation()">GitHub</a>
+              <a href="#" class="pb pb-dark" onclick="event.stopPropagation()">Live ↗</a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-head">
-            <h3>BlogBeat</h3>
-            <span class="status-badge status-live">Live</span>
-            <span class="ver-tag">v2.4</span>
-          </div>
-          <p class="project-desc">Real-time social blogging platform with live WebSocket chat, AI assistant, analytics dashboard and saved blogs engine.</p>
-          <p class="project-stack">Django · DRF · WebSocket · Redis · PostgreSQL · Tailwind</p>
-          <div class="project-links">
-            <a href="https://github.com/Vandann-1/blogbeat" target="_blank" class="proj-btn proj-btn-outline">Source Code</a>
-            <a href="#" class="proj-btn proj-btn-fill">Live</a>
-          </div>
+        <div class="proj-footer">
+          <span class="stack-pill">Django</span><span class="stack-pill">DRF</span><span class="stack-pill">WebSocket</span><span class="stack-pill">Redis</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Tailwind</span>
+          <span class="proj-arrow">→</span>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-img">
-          <img src="{% static 'img/logo.jpg' %}" alt="ThinknShop">
+      <div class="proj-item" onclick="openModal('thinknshop')">
+        <div class="proj-bg-num">02</div>
+        <div class="proj-top">
+          <div class="proj-left">
+            <div class="proj-eyebrow">
+              <span class="proj-idx">02 / 04</span>
+              <span class="dot-live"></span>
+              <span style="font-size:11px;color:#16a34a;font-weight:700;letter-spacing:.08em">LIVE</span>
+            </div>
+            <div class="proj-name">ThinknShop</div>
+            <p class="proj-tagline">Full-stack Indian e-commerce — Razorpay payments, Shiprocket logistics &amp; live order processing.</p>
+          </div>
+          <div class="proj-right">
+            <span class="proj-ver">v1.8</span>
+            <div class="proj-btns">
+              <a href="#" class="pb pb-ghost" onclick="event.stopPropagation()">GitHub</a>
+              <a href="https://thinknshop.in" target="_blank" class="pb pb-dark" onclick="event.stopPropagation()">Visit Live ↗</a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-head">
-            <h3>ThinknShop</h3>
-            <span class="status-badge status-live">Live</span>
-            <span class="ver-tag">v1.8</span>
-          </div>
-          <p class="project-desc">Full-stack Indian e-commerce platform with Razorpay payments, Shiprocket logistics, admin dashboards and live order processing.</p>
-          <p class="project-stack">Django · PostgreSQL · Razorpay · Redis · Tailwind</p>
-          <div class="project-links">
-            <a href="https://thinknshop.in" target="_blank" class="proj-btn proj-btn-fill">Visit Live</a>
-            <a href="#" class="proj-btn proj-btn-outline">Source Code</a>
-          </div>
+        <div class="proj-footer">
+          <span class="stack-pill">Django</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Razorpay</span><span class="stack-pill">Shiprocket</span><span class="stack-pill">Redis</span><span class="stack-pill">Tailwind</span>
+          <span class="proj-arrow">→</span>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-img">
-          <img src="{% static 'img/techspire.jpg' %}" alt="TechSpire">
+      <div class="proj-item" onclick="openModal('techspire')">
+        <div class="proj-bg-num">03</div>
+        <div class="proj-top">
+          <div class="proj-left">
+            <div class="proj-eyebrow">
+              <span class="proj-idx">03 / 04</span>
+              <span class="dot-dev"></span>
+              <span style="font-size:11px;color:#d97706;font-weight:700;letter-spacing:.08em">IN DEV</span>
+            </div>
+            <div class="proj-name">TechSpire</div>
+            <p class="proj-tagline">Service company platform — automation bots, client portals, CRM &amp; internal analytics.</p>
+          </div>
+          <div class="proj-right">
+            <span class="proj-ver">v1.0</span>
+            <div class="proj-btns">
+              <a href="https://github.com/Vandann-1/techspire" target="_blank" class="pb pb-ghost" onclick="event.stopPropagation()">GitHub</a>
+              <a href="#" class="pb pb-dark" onclick="event.stopPropagation()">Preview ↗</a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-head">
-            <h3>TechSpire</h3>
-            <span class="status-badge status-dev">In Dev</span>
-            <span class="ver-tag">v1.0</span>
+        <div class="proj-footer">
+          <span class="stack-pill">Django</span><span class="stack-pill">Celery</span><span class="stack-pill">Redis</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Tailwind</span>
+          <span class="proj-arrow">→</span>
+        </div>
+      </div>
+
+      <div class="proj-item" onclick="openModal('webproarts')">
+        <div class="proj-bg-num">04</div>
+        <div class="proj-top">
+          <div class="proj-left">
+            <div class="proj-eyebrow">
+              <span class="proj-idx">04 / 04</span>
+              <span class="dot-live"></span>
+              <span style="font-size:11px;color:#16a34a;font-weight:700;letter-spacing:.08em">LIVE</span>
+            </div>
+            <div class="proj-name">WebProArts</div>
+            <p class="proj-tagline">Dynamic web agency platform — creative portfolios, service showcases &amp; client management.</p>
           </div>
-          <p class="project-desc">Service company platform with automation bots, client portals, CRM management and internal analytics dashboard.</p>
-          <p class="project-stack">Django · Celery · Redis · PostgreSQL · Tailwind</p>
-          <div class="project-links">
-            <a href="https://github.com/Vandann-1/techspire" target="_blank" class="proj-btn proj-btn-outline">Source Code</a>
-            <a href="#" class="proj-btn proj-btn-fill">Preview</a>
+          <div class="proj-right">
+            <span class="proj-ver">v1.0</span>
+            <div class="proj-btns">
+              <a href="#" class="pb pb-ghost" onclick="event.stopPropagation()">GitHub</a>
+              <a href="#" class="pb pb-dark" onclick="event.stopPropagation()">Visit Live ↗</a>
+            </div>
           </div>
+        </div>
+        <div class="proj-footer">
+          <span class="stack-pill">Django</span><span class="stack-pill">PostgreSQL</span><span class="stack-pill">Tailwind</span><span class="stack-pill">JavaScript</span>
+          <span class="proj-arrow">→</span>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- ===================== PROJECT MODAL ===================== -->
+<div class="proj-modal-overlay" id="proj-modal-overlay" onclick="closeModal(event)">
+  <div class="proj-modal-box" id="proj-modal-box">
+    <div class="proj-modal-header">
+      <div>
+        <div class="proj-modal-eyebrow" id="m-eyebrow"></div>
+        <div class="proj-modal-title" id="m-title"></div>
+      </div>
+      <button class="proj-modal-close" onclick="closeModal(null)">✕</button>
+    </div>
+    <div class="proj-modal-body">
+      <p class="proj-modal-desc" id="m-desc"></p>
+      <div class="proj-modal-divider"></div>
+      <div>
+        <div class="proj-modal-label">Key Features</div>
+        <div class="proj-modal-features" id="m-features"></div>
+      </div>
+      <div class="proj-modal-divider"></div>
+      <div>
+        <div class="proj-modal-label">Tech Stack</div>
+        <div class="proj-modal-stack" id="m-stack"></div>
+      </div>
+      <div class="proj-modal-actions" id="m-actions"></div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  /* PROJECT LIST */
+.proj-list { padding: 56px 0 0; }
+.proj-item {
+  position: relative; padding: 32px 0; cursor: pointer;
+  border-bottom: 1px solid var(--border); overflow: hidden;
+}
+.proj-item:first-child { border-top: 1px solid var(--border); }
+.proj-bg-num {
+  position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+  font-size: clamp(72px,12vw,120px); font-weight: 900; color: var(--bg-3);
+  line-height: 1; pointer-events: none; user-select: none; transition: color .3s;
+}
+.proj-item:hover .proj-bg-num { color: var(--border); }
+.proj-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; position: relative; z-index: 1; }
+.proj-left { flex: 1; }
+.proj-eyebrow { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.proj-idx { font-size: .68rem; font-weight: 500; color: var(--text-3); letter-spacing: .12em; }
+.dot-live { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; display: inline-block; animation: pulse 2s infinite; }
+.dot-dev  { width: 7px; height: 7px; border-radius: 50%; background: #F59E0B; display: inline-block; }
+.proj-name {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px,5vw,52px); font-weight: 900; line-height: .95;
+  color: var(--text); letter-spacing: -.04em; transition: transform .3s;
+}
+.proj-item:hover .proj-name { transform: translateX(8px); }
+.proj-tagline { font-size: .875rem; color: var(--text-2); margin-top: 10px; max-width: 480px; line-height: 1.6; }
+.proj-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; }
+.proj-ver { font-size: .68rem; color: var(--text-3); font-weight: 500; letter-spacing: .06em; }
+.proj-btns { display: flex; gap: 6px; }
+.pb { font-size: .75rem; font-weight: 700; padding: 8px 18px; border-radius: 999px; text-decoration: none; transition: all .2s; }
+.pb-dark { background: var(--text); color: var(--bg); }
+.pb-dark:hover { opacity: .75; }
+.pb-ghost { border: 1.5px solid var(--border); color: var(--text-2); }
+.pb-ghost:hover { border-color: var(--text); color: var(--text); }
+.proj-footer { display: flex; align-items: center; gap: 6px; margin-top: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+.stack-pill { font-size: .65rem; letter-spacing: .05em; padding: 3px 10px; border-radius: 999px; background: var(--bg-2); border: 1px solid var(--border); color: var(--text-3); }
+.proj-arrow { margin-left: auto; font-size: 1.25rem; color: var(--text-3); transition: transform .3s, color .3s; }
+.proj-item:hover .proj-arrow { transform: translateX(6px) rotate(-45deg); color: var(--text); }
+
+/* MODAL */
+.proj-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 9999;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  opacity: 0; pointer-events: none; transition: opacity .25s;
+}
+.proj-modal-overlay.show { opacity: 1; pointer-events: all; }
+.proj-modal-box {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 20px;
+  width: 100%; max-width: 580px; max-height: 88vh; overflow-y: auto;
+  transform: translateY(24px) scale(.97);
+  transition: transform .28s cubic-bezier(.34,1.56,.64,1); position: relative;
+}
+.proj-modal-overlay.show .proj-modal-box { transform: translateY(0) scale(1); }
+.proj-modal-header { padding: 28px 28px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.proj-modal-close {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--bg-2); color: var(--text-2);
+  font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s;
+}
+.proj-modal-close:hover { background: var(--bg-3); color: var(--text); }
+.proj-modal-eyebrow { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.proj-modal-title { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 900; letter-spacing: -.04em; color: var(--text); line-height: 1; }
+.proj-modal-body { padding: 20px 28px 28px; display: flex; flex-direction: column; gap: 20px; }
+.proj-modal-desc { font-size: .9rem; color: var(--text-2); line-height: 1.75; }
+.proj-modal-label { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+.proj-modal-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+.proj-modal-stack span { font-size: .78rem; padding: 5px 14px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-2); background: var(--bg-2); }
+.proj-modal-features { display: flex; flex-direction: column; gap: 10px; }
+.feat-row { display: flex; align-items: flex-start; gap: 10px; font-size: .875rem; color: var(--text-2); line-height: 1.5; }
+.feat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-3); flex-shrink: 0; margin-top: 7px; }
+.proj-modal-actions { display: flex; gap: 8px; padding-top: 4px; }
+.ma { font-size: .875rem; font-weight: 700; padding: 12px 24px; border-radius: 999px; text-decoration: none; transition: all .2s; text-align: center; flex: 1; }
+.ma-dark { background: var(--text); color: var(--bg); }
+.ma-dark:hover { opacity: .78; }
+.ma-ghost { border: 1.5px solid var(--border); color: var(--text-2); }
+.ma-ghost:hover { border-color: var(--text); color: var(--text); }
+.ma-disabled { opacity: .35; pointer-events: none; }
+.proj-modal-divider { height: 1px; background: var(--border); }
+
+@media(max-width: 600px) {
+  .proj-top { flex-direction: column; }
+  .proj-right { align-items: flex-start; }
+  .proj-bg-num { font-size: 72px; }
+  .proj-modal-header, .proj-modal-body { padding-left: 20px; padding-right: 20px; }
+  .proj-modal-title { font-size: 1.8rem; }
+}
+</style>
+
+
+<script>
+  // ---- PROJECT MODAL ----
+var projects = {
+  blogbeat: {
+    title:'BlogBeat', status:'LIVE', statusColor:'#16a34a', dot:'live', ver:'v2.4',
+    desc:'A full-featured real-time social blogging platform where users can publish posts, interact through live WebSocket chat, get AI writing assistance, and track engagement through a detailed analytics dashboard.',
+    features:['Live WebSocket chat — real-time messaging between readers and authors','AI assistant integrated directly into the post editor for writing help','Analytics dashboard with views, engagement and reader retention stats','Saved blogs engine — bookmark and organise posts into collections','User authentication with profiles, follow system and activity feeds'],
+    stack:['Django','Django REST Framework','WebSocket','Redis','PostgreSQL','Tailwind CSS','Python'],
+    github:'https://github.com/Vandann-1/blogbeat', live:'#', liveLabel:'View Live'
+  },
+  thinknshop: {
+    title:'ThinknShop', status:'LIVE', statusColor:'#16a34a', dot:'live', ver:'v1.8',
+    desc:'A complete Indian e-commerce platform handling everything from product listings and cart management to payment processing via Razorpay and order logistics via Shiprocket integration.',
+    features:['Razorpay payment gateway — UPI, cards, netbanking fully integrated','Shiprocket logistics API for real-time order tracking and shipping','Admin dashboard with sales reports, inventory and order management','Live order processing with status updates and email notifications','Mobile-responsive storefront with product filters and search'],
+    stack:['Django','PostgreSQL','Razorpay','Shiprocket API','Redis','Tailwind CSS','JavaScript'],
+    github:'#', live:'https://thinknshop.in', liveLabel:'Visit Live'
+  },
+  techspire: {
+    title:'TechSpire', status:'IN DEV', statusColor:'#d97706', dot:'dev', ver:'v1.0',
+    desc:'An all-in-one service company platform designed to streamline client onboarding, automate repetitive workflows, and provide management teams with real-time visibility into operations.',
+    features:['Automation bots for scheduling, follow-ups and routine task execution','Client portals — dedicated dashboards for each client to track progress','CRM module with lead management, notes and communication history','Internal analytics dashboard for team productivity and project KPIs','Role-based access control for admins, managers and clients'],
+    stack:['Django','Celery','Redis','PostgreSQL','Tailwind CSS','Python'],
+    github:'https://github.com/Vandann-1/techspire', live:'#', liveLabel:'Preview'
+  },
+  webproarts: {
+    title:'WebProArts', status:'LIVE', statusColor:'#16a34a', dot:'live', ver:'v1.0',
+    desc:'A dynamic web agency platform that lets creative agencies showcase their portfolio, manage service offerings, handle client inquiries and maintain an engaging online presence — all from one place.',
+    features:['Dynamic portfolio showcase with project categories and filtering','Service pages with custom pricing and inquiry forms','Client management panel for tracking leads and project status','CMS-style content editor — update pages without touching code','Contact and inquiry system with email notification pipeline'],
+    stack:['Django','PostgreSQL','Tailwind CSS','JavaScript'],
+    github:'#', live:'#', liveLabel:'Visit Live'
+  }
+};
+
+function openModal(key) {
+  var p = projects[key];
+  var dotHtml = '<span style="width:7px;height:7px;border-radius:50%;background:'+(p.dot==='live'?'#22C55E':'#F59E0B')+';display:inline-block"></span>';
+  document.getElementById('m-eyebrow').innerHTML = dotHtml + '<span style="font-size:11px;font-weight:700;letter-spacing:.1em;color:'+p.statusColor+'">'+p.status+'</span><span style="font-size:11px;color:var(--text-3);margin-left:4px">'+p.ver+'</span>';
+  document.getElementById('m-title').textContent = p.title;
+  document.getElementById('m-desc').textContent = p.desc;
+  var ff = document.getElementById('m-features'); ff.innerHTML = '';
+  p.features.forEach(function(f){ ff.innerHTML += '<div class="feat-row"><span class="feat-dot"></span><span>'+f+'</span></div>'; });
+  var ss = document.getElementById('m-stack'); ss.innerHTML = '';
+  p.stack.forEach(function(s){ ss.innerHTML += '<span>'+s+'</span>'; });
+  var aa = document.getElementById('m-actions');
+  var gd = p.github==='#', ld = p.live==='#';
+  aa.innerHTML = '<a href="'+(gd?'javascript:void(0)':p.github)+'" '+(gd?'':'target="_blank"')+' class="ma ma-ghost'+(gd?' ma-disabled':'')+'">GitHub '+(gd?'(soon)':'↗')+'</a><a href="'+(ld?'javascript:void(0)':p.live)+'" '+(ld?'':'target="_blank"')+' class="ma ma-dark'+(ld?' ma-disabled':'')+'">'+p.liveLabel+' '+(ld?'(soon)':'↗')+'</a>';
+  document.getElementById('proj-modal-overlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('proj-modal-overlay')) return;
+  document.getElementById('proj-modal-overlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(null); });
+</script>
 
 <!-- ===================== CERTIFICATIONS ===================== -->
 <section id="certs">
@@ -635,7 +866,12 @@
     <div class="certs-grid">
 
       <div class="cert-card reveal">
-        <div class="cert-icon">🔐</div>
+        <div class="cert-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z" fill="#2351F5"/>
+            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <h3>Cybersecurity</h3>
         <div class="cert-issuer">Issued by Tech Mahindra</div>
         <p>Learned how cybersecurity protects systems, data, and infrastructure from digital threats and cyberattacks.</p>
@@ -645,7 +881,12 @@
       </div>
 
       <div class="cert-card reveal">
-        <div class="cert-icon">🐍</div>
+        <div class="cert-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" fill="#3B6D11"/>
+            <text x="12" y="16.5" text-anchor="middle" fill="white" font-size="10" font-weight="700" font-family="monospace">Py</text>
+          </svg>
+        </div>
         <h3>Python Development</h3>
         <div class="cert-issuer">Issued by Quastech</div>
         <p>Learned how Python powers software development, automates tasks, and builds efficient, real-world applications.</p>
@@ -654,10 +895,41 @@
         </a>
       </div>
 
+      <div class="cert-card reveal">
+        <div class="cert-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="3" width="20" height="14" rx="2" fill="#534AB7"/>
+            <path d="M8 21h8M12 17v4" stroke="#534AB7" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M7 8l-2 4 2 4M17 8l2 4-2 4M11 14l2-8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Full Stack Development</h3>
+        <div class="cert-issuer">Issuer — coming soon</div>
+        <p>Covers end-to-end web development — from frontend interfaces to backend APIs and database architecture.</p>
+        <a href="#" class="cert-link" style="opacity:.4;pointer-events:none">
+          View Certificate <i class="fas fa-arrow-right" style="font-size:.7rem"></i>
+        </a>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <rect x="7" y="2" width="10" height="20" rx="2" fill="#3B6D11"/>
+            <circle cx="12" cy="18.5" r="1" fill="white"/>
+            <rect x="9.5" y="4" width="5" height="1.2" rx="0.6" fill="white" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>Android Development</h3>
+        <div class="cert-issuer">Issuer — coming soon</div>
+        <p>Covers building native Android applications using Java/Kotlin, UI components, and app lifecycle management.</p>
+        <a href="#" class="cert-link" style="opacity:.4;pointer-events:none">
+          View Certificate <i class="fas fa-arrow-right" style="font-size:.7rem"></i>
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
-
 <!-- ===================== CONTACT ===================== -->
 <section id="contact">
   <div class="contact-inner">
