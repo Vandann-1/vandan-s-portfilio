@@ -498,6 +498,161 @@
   </div>
 </section>
 
+<!-- ====================work % exp ====================== -->
+<section id="experience" class="reveal">
+  <div class="kinetic-container">
+    
+    <div class="kinetic-header">
+      <span class="section-eyebrow">Professional Logs</span>
+      <h2 class="section-title">Work<span> Experience</span></h2>
+    </div>
+
+    <div class="kinetic-body">
+      <div class="kinetic-thread"></div>
+
+      <div class="kinetic-item active">
+        <div class="kinetic-marker"></div>
+        <div class="kinetic-card current">
+          <div class="kinetic-glass-bg"></div>
+          
+          <div class="kinetic-content">
+            <div class="kinetic-top">
+              <div class="k-info">
+                <span class="k-label">01 / CURRENT ROLE</span>
+                <h3 class="k-role">Full Stack Developer</h3>
+                <span class="k-company">WebPro Arts <small>// Digital Agency</small></span>
+              </div>
+              <div class="k-date-pill">APR 2026 — PRESENT</div>
+            </div>
+
+            <div class="k-terminal">
+              <div class="t-head"><span></span><span></span><span></span></div>
+              <div class="t-body">
+                <p><span class="t-cmd">vandan@portfolio:~$</span> build --project "WebPro Arts"</p>
+                <p class="t-success">✔ Initializing AI Content Modules...</p>
+                <p class="t-success">✔ Deploying Django/Celery Architecture...</p>
+              </div>
+            </div>
+
+            <ul class="k-list">
+              <li>Engineered the agency's core platform with **AI-driven automation** for scalable content delivery.</li>
+              <li>Architected the full-stack infrastructure, integrating **Search Engine Optimization** directly into the Django backend.</li>
+              <li>Streamlined client project workflows through custom-built internal CRM tools and API integrations.</li>
+            </ul>
+
+            <div class="k-stack">
+              <span>Django</span><span>AI Integration</span><span>Architecture</span><span>Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kinetic-item">
+        <div class="kinetic-marker"></div>
+        <div class="kinetic-card">
+          <div class="kinetic-glass-bg"></div>
+          
+          <div class="kinetic-content">
+            <div class="kinetic-top">
+              <div class="k-info">
+                <span class="k-label">02 / DESIGN PHASE</span>
+                <h3 class="k-role">Product Designer & Developer</h3>
+                <span class="k-company">ThinknShop <small>// E-commerce</small></span>
+              </div>
+              <div class="k-date-pill past">NOV 2025 — JAN 2026</div>
+            </div>
+
+            <div class="k-terminal">
+              <div class="t-head"><span></span><span></span><span></span></div>
+              <div class="t-body">
+                <p><span class="t-cmd">vandan@design:~$</span> optimize --ui "ThinknShop"</p>
+                <p class="t-process">i Injecting Tailwind CSS utility classes...</p>
+                <p class="t-process">i Rendered 12+ High-Fidelity Anime Mockups...</p>
+              </div>
+            </div>
+
+            <ul class="k-list">
+              <li>Mastered **Tailwind CSS** to build a mobile-first, conversion-focused interface for customized merchandise.</li>
+              <li>Designed the UX flow for **ThinknShop’s** interactive bottle customizer, resulting in a premium user journey.</li>
+              <li>Collaborated on "Studio-Style" visual assets, maintaining a minimalist aesthetic across the entire brand.</li>
+            </ul>
+
+            <div class="k-stack">
+              <span>Tailwind CSS</span><span>UI/UX</span><span>Django</span><span>E-commerce</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+/* KINETIC EXPERIENCE STYLES */
+.kinetic-container { max-width: 1100px; margin: 0 auto; padding: 120px 24px; }
+.kinetic-header { margin-bottom: 80px; text-align: left; }
+.kinetic-header h2 span { color: var(--accent); font-weight: 300; }
+
+.kinetic-body { position: relative; padding-left: 40px; }
+.kinetic-thread { 
+    position: absolute; left: 0; top: 0; bottom: 0; width: 1px; 
+    background: linear-gradient(to bottom, var(--accent), var(--border) 80%);
+}
+
+.kinetic-item { position: relative; margin-bottom: 60px; }
+.kinetic-marker { 
+    position: absolute; left: -45px; top: 30px; width: 11px; height: 11px; 
+    border-radius: 50%; background: var(--bg); border: 2px solid var(--border); z-index: 2; 
+}
+.kinetic-item.active .kinetic-marker { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 15px var(--accent); }
+
+.kinetic-card { 
+    position: relative; border-radius: 32px; border: 1px solid var(--border); 
+    background: var(--bg-2); overflow: hidden; transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.kinetic-card:hover { transform: translateX(10px); border-color: var(--accent); box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+.kinetic-glass-bg { position: absolute; inset: 0; opacity: 0.03; pointer-events: none; background: radial-gradient(circle at top right, var(--accent), transparent); }
+
+.kinetic-content { padding: 40px; position: relative; z-index: 1; }
+.kinetic-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; gap: 20px; }
+.k-label { font-size: 0.65rem; font-weight: 800; color: var(--text-3); letter-spacing: 0.2em; display: block; margin-bottom: 8px; }
+.k-role { font-family: 'Fraunces', serif; font-size: 1.75rem; color: var(--text); font-weight: 800; line-height: 1; }
+.k-company { font-size: 1rem; color: var(--accent); font-weight: 600; display: block; margin-top: 8px; }
+.k-company small { color: var(--text-3); font-weight: 400; margin-left: 5px; }
+
+.k-date-pill { 
+    font-size: 0.7rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; 
+    background: var(--bg-3); color: var(--text-2); border: 1px solid var(--border); white-space: nowrap;
+}
+.current .k-date-pill { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+/* Terminal Component */
+.k-terminal { background: #0b0c0e; border-radius: 12px; padding: 15px; margin-bottom: 24px; font-family: 'monospace'; font-size: 0.8rem; }
+.t-head { display: flex; gap: 6px; margin-bottom: 10px; }
+.t-head span { width: 8px; height: 8px; border-radius: 50%; background: #333; }
+.t-body { color: #888; line-height: 1.6; }
+.t-cmd { color: #22C55E; }
+.t-success { color: #555; font-style: italic; }
+.t-process { color: var(--accent-2); opacity: 0.8; }
+
+.k-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.k-list li { font-size: 0.9rem; color: var(--text-2); line-height: 1.6; padding-left: 20px; position: relative; }
+.k-list li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: 900; font-size: 1.1rem; }
+
+.k-stack { display: flex; gap: 8px; flex-wrap: wrap; }
+.k-stack span { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-3); border-bottom: 1px solid var(--border); padding-bottom: 2px; }
+
+@media (max-width: 768px) {
+    .kinetic-top { flex-direction: column; }
+    .k-role { font-size: 1.4rem; }
+    .kinetic-content { padding: 25px; }
+    .kinetic-body { padding-left: 30px; }
+    .kinetic-marker { left: -35px; }
+}
+</style>
+
+
+
 <!-- ===================== ABOUT ===================== -->
 <section id="about">
   <div class="about-inner">
